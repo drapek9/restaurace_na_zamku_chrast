@@ -72,16 +72,38 @@
     </section>
 
     <!-- Ocenění – Hvězda sládků -->
-    <section class="section section--cream">
+    <section class="section section--cream awards" aria-labelledby="awards-title">
       <div class="container">
-        <div class="awards-inner">
-          <div class="award-badge" aria-hidden="true">
-            <!-- Placeholder: obrázek ocenění Hvězda sládků -->
-            <span>⭐</span>
+        <div class="awards__grid">
+          <div class="awards__content">
+            <header class="awards__header">
+              <span class="awards__icon" aria-hidden="true">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </span>
+              <h2 id="awards-title" class="awards__title">Hvězda sládků</h2>
+            </header>
+            <div class="awards__divider" aria-hidden="true"></div>
+            <p class="awards__desc">Jsme hrdí na ocenění Hvězda sládků, které odráží naši snahu o kvalitní gastronomii a pohostinnost v prostředí zámku Chrast.</p>
+            <div class="awards__badges">
+              <div class="award-card">
+                <span class="award-card__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </span>
+                <span class="award-card__year">2025</span>
+              </div>
+              <div class="award-card">
+                <span class="award-card__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </span>
+                <span class="award-card__year">2026</span>
+              </div>
+            </div>
           </div>
-          <h2 class="section-title">Hvězda sládků</h2>
-          <p>Jsme hrdí na ocenění Hvězda sládků, které odráží naši snahu o kvalitní gastronomii a pohostinnost v prostředí zámku Chrast.</p>
-          <p><small>Placeholder: sem lze vložit logo ocenění nebo oficiální text.</small></p>
+          <div class="awards__media">
+            <div class="awards__image">
+              <img src="images/hvezda_sladku.jpg" alt="Ocenění Hvězda sládků" onerror="this.style.display='none'">
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -95,7 +117,7 @@
           <div class="rating-card">
             <div class="rating-card__source">Google</div>
             <div class="rating-card__stars" aria-hidden="true">★★★★★</div>
-            <div class="rating-card__value">4,8</div>
+            <div class="rating-card__value">4,7</div>
           </div>
           <div class="rating-card">
             <div class="rating-card__source">Facebook</div>
