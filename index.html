@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Restaurace Na Zámku Chrast – poctivá kuchyně v historickém prostředí zámku. RESAL CATERING, s.r.o.">
+  <title>Restaurace Na Zámku Chrast | Úvod</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">Restaurace Na <span>Zámku</span></a>
+      <nav class="nav-desktop" aria-label="Hlavní navigace">
+        <a href="index.html" class="active">Úvod</a>
+        <a href="prostory.html">Prostory restaurace</a>
+        <a href="ctyri-pepre.html">4 Pepře</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="nav-mobile" id="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+  <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Mobilní menu">
+    <a href="index.html">Úvod</a>
+    <a href="prostory.html">Prostory restaurace</a>
+    <a href="ctyri-pepre.html">4 Pepře</a>
+    <a href="kontakt.html">Kontakt</a>
+  </nav>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero__video-wrap">
+        <video class="hero__video" autoplay muted loop playsinline poster="images/placeholders/hero-poster.jpg" id="hero-video">
+          <source src="images/placeholders/hero-video.mp4" type="video/mp4">
+          <source src="images/placeholders/hero-video.webm" type="video/webm">
+        </video>
+        <div class="hero__poster" aria-hidden="true"></div>
+      </div>
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="hero__content">
+        <h1 class="hero__title">Restaurace Na Zámku Chrast</h1>
+        <p class="hero__tagline">Poctivá kuchyně v historickém prostředí zámku. 70 % chuti tvoří surovina — proto nakupujeme u českých farmářů.</p>
+        <a href="kontakt.html#rezervace" class="btn btn--outline">Rezervovat</a>
+      </div>
+    </section>
+
+    <!-- O restauraci -->
+    <section class="section" id="o-restauraci">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-grid__media">
+            <img src="images/prvni_fotka.jpeg" alt="Atmosféra restaurace Na Zámku Chrast" class="about-grid__img">
+          </div>
+          <div class="about-grid__text">
+            <h2 class="section-title">O restauraci</h2>
+            <p class="section-subtitle">
+              Vítá vás Restaurace Na Zámku Chrast. Sídlíme v historické budově zámku na náměstí v Chrasti a nabízíme poctivou kuchyni v elegantním a útulném prostředí.
+            </p>
+            <p>
+              70 % chuti jídla tvoří surovina, 30 % dotváří kuchař. Proto nakupujeme u českých farmářů a dbáme na sezónní a lokální ingredience. Přijďte si vychutnat oběd, večeři nebo posezení na naší zahrádce.
+            </p>
+            <a href="prostory.html" class="btn btn--dark">Prohlédnout prostory</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ocenění – Hvězda sládků -->
+    <section class="section section--cream">
+      <div class="container">
+        <div class="awards-inner">
+          <div class="award-badge" aria-hidden="true">
+            <!-- Placeholder: obrázek ocenění Hvězda sládků -->
+            <span>⭐</span>
+          </div>
+          <h2 class="section-title">Hvězda sládků</h2>
+          <p>Jsme hrdí na ocenění Hvězda sládků, které odráží naši snahu o kvalitní gastronomii a pohostinnost v prostředí zámku Chrast.</p>
+          <p><small>Placeholder: sem lze vložit logo ocenění nebo oficiální text.</small></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hodnocení -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title text-center">Hodnocení hostů</h2>
+        <p class="section-subtitle text-center">Průměrné hodnocení na vybraných platformách.</p>
+        <div class="ratings">
+          <div class="rating-card">
+            <div class="rating-card__source">Google</div>
+            <div class="rating-card__stars" aria-hidden="true">★★★★★</div>
+            <div class="rating-card__value">4,8</div>
+          </div>
+          <div class="rating-card">
+            <div class="rating-card__source">Facebook</div>
+            <div class="rating-card__stars" aria-hidden="true">★★★★★</div>
+            <div class="rating-card__value">98 %</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Akce -->
+    <section class="section section--dark">
+      <div class="container">
+        <h2 class="section-title text-center">Akce a události</h2>
+        <p class="section-subtitle text-center">Pravidelné i mimořádné akce v restauraci Na Zámku.</p>
+        <div class="events-grid">
+          <article class="event-card">
+            <div class="event-card__poster">
+              <div class="placeholder-img" style="width:100%;height:100%;">Plakát akce 1</div>
+            </div>
+            <div class="event-card__body">
+              <div class="event-card__date">Každý pátek</div>
+              <h3 class="event-card__title">Páteční speciály</h3>
+              <p class="event-card__desc">Každý pátek připravujeme speciální menu a živou hudbu. Rezervace doporučena.</p>
+            </div>
+          </article>
+          <article class="event-card">
+            <div class="event-card__poster">
+              <div class="placeholder-img" style="width:100%;height:100%;">Plakát akce 2</div>
+            </div>
+            <div class="event-card__body">
+              <div class="event-card__date">Dle kalendáře</div>
+              <h3 class="event-card__title">Degustační večery</h3>
+              <p class="event-card__desc">Degustační menu s výběrem vín a sezónních specialit. Sledujte naše stránky a Facebook.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Loga dodavatelů – animace zleva doprava (7 log + 2 texty) -->
+    <section class="suppliers section" aria-label="Naši dodavatelé">
+      <div class="container">
+        <h2 class="suppliers__title">Naši dodavatelé</h2>
+        <p class="suppliers__subtitle">Podporujeme české producenty potravin, mezi naše přední dodavatele patří</p>
+      </div>
+      <div class="suppliers__viewport">
+        <div class="suppliers__track">
+          <div class="suppliers__group">
+            <div class="suppliers__logo">
+              <img src="images/dodavatele/farma_martin_novotny.png" alt="Dodavatel 1" onerror="this.style.display='none'">
+            </div>
+            <div class="suppliers__logo">
+              <img src="images/dodavatele/frantisek_sutera.png" alt="Dodavatel 2" onerror="this.style.display='none'">
+            </div>
+            <div class="suppliers__logo">
+              <img src="images/dodavatele/samuhel_platensko.png" alt="Dodavatel 3" onerror="this.style.display='none'">
+            </div>
+            <div class="suppliers__logo">
+              <img src="images/dodavatele/farma_rodiny_nemcovy_netin.png" alt="Dodavatel 4" onerror="this.style.display='none'">
+            </div>
+            <div class="suppliers__logo">
+              <img src="images/dodavatele/farma_tegl.png" alt="Dodavatel 5" onerror="this.style.display='none'">
+            </div>
+            <div class="suppliers__logo">
+              <img src="images/dodavatele/mlyn_janderov.png" alt="Dodavatel 6" onerror="this.style.display='none'">
+            </div>
+            <div class="suppliers__logo">
+              <img src="images/dodavatele/zd_rosice.png" alt="Dodavatel 7" onerror="this.style.display='none'">
+            </div>
+            <div class="suppliers__text">Mlékárna Marie Černilová</div>
+            <div class="suppliers__text">Manželé Pasekovi</div>
+          </div>
+          <div class="suppliers__group" aria-hidden="true">
+            <div class="suppliers__logo">
+              <img src="images/dodavatele/farma_martin_novotny.png" alt="" onerror="this.style.display='none'">
+            </div>
+            <div class="suppliers__logo">
+              <img src="images/dodavatele/frantisek_sutera.png" alt="" onerror="this.style.display='none'">
+            </div>
+            <div class="suppliers__logo">
+              <img src="images/dodavatele/samuhel_platensko.png" alt="" onerror="this.style.display='none'">
+            </div>
+            <div class="suppliers__logo">
+              <img src="images/dodavatele/farma_rodiny_nemcovy_netin.png" alt="" onerror="this.style.display='none'">
+            </div>
+            <div class="suppliers__logo">
+              <img src="images/dodavatele/farma_tegl.png" alt="" onerror="this.style.display='none'">
+            </div>
+            <div class="suppliers__logo">
+              <img src="images/dodavatele/mlyn_janderov.png" alt="" onerror="this.style.display='none'">
+            </div>
+            <div class="suppliers__logo">
+              <img src="images/dodavatele/zd_rosice.png" alt="" onerror="this.style.display='none'">
+            </div>
+            <div class="suppliers__text">Mlékárna Marie Černilová</div>
+            <div class="suppliers__text">Manželé Pasekovi</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galerie -->
+    <section class="section section--cream">
+      <div class="container">
+        <h2 class="section-title text-center">Galerie</h2>
+        <p class="section-subtitle text-center">Atmosféra zámku, restaurace a okolí.</p>
+        <div class="gallery" id="home-gallery">
+          <div class="gallery__item gallery__item--wide">
+            <div class="placeholder-img" style="width:100%;height:100%;">Placeholder: foto 1</div>
+          </div>
+          <div class="gallery__item">
+            <div class="placeholder-img" style="width:100%;height:100%;">Placeholder: foto 2</div>
+          </div>
+          <div class="gallery__item gallery__item--tall">
+            <div class="placeholder-img" style="width:100%;height:100%;">Placeholder: foto 3</div>
+          </div>
+          <div class="gallery__item">
+            <div class="placeholder-img" style="width:100%;height:100%;">Placeholder: foto 4</div>
+          </div>
+          <div class="gallery__item">
+            <div class="placeholder-img" style="width:100%;height:100%;">Placeholder: foto 5</div>
+          </div>
+          <div class="gallery__item gallery__item--wide gallery__item--large">
+            <div class="placeholder-img" style="width:100%;height:100%;">Placeholder: foto 6</div>
+          </div>
+          <div class="gallery__item">
+            <div class="placeholder-img" style="width:100%;height:100%;">Placeholder: foto 7</div>
+          </div>
+          <div class="gallery__item">
+            <div class="placeholder-img" style="width:100%;height:100%;">Placeholder: foto 8</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer__brand">Restaurace Na Zámku</div>
+            <div class="footer__company">RESAL CATERING, s.r.o.</div>
+            <p>Náměstí 1, Chrast</p>
+            <p><a href="tel:+420773549795">+420 773 549 795</a> · <a href="mailto:info@zameckachrast.cz">info@zameckachrast.cz</a></p>
+          </div>
+          <div>
+            <div class="footer__links">
+              <a href="index.html">Úvod</a>
+              <a href="prostory.html">Prostory restaurace</a>
+              <a href="ctyri-pepre.html">4 Pepře</a>
+              <a href="kontakt.html">Kontakt</a>
+            </div>
+            <div class="footer__social">
+              <a href="https://www.facebook.com/RestauraceNaZamkuChrast" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+              <a href="https://www.instagram.com/restaurace_na_zamku_chrast/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          © RESAL CATERING, s.r.o. · Restaurace Na Zámku Chrast
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
