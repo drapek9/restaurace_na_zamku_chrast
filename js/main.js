@@ -140,9 +140,10 @@
   }
 
   // --------------------------------------------------------------------------
-  // Menu cards – click to enlarge (lightbox)
+  // Menu cards & event cards – click to enlarge (lightbox)
   // --------------------------------------------------------------------------
   var menuCards = document.querySelectorAll('.menu-card');
+  var eventCards = document.querySelectorAll('.event-card');
   var lightbox = document.getElementById('menu-lightbox');
   var lightboxImage = lightbox && lightbox.querySelector('.menu-lightbox__image');
   var lightboxClose = lightbox && lightbox.querySelector('.menu-lightbox__close');
@@ -165,10 +166,20 @@
     document.body.style.overflow = '';
   }
 
-  if (menuCards.length && lightbox) {
+  if ((menuCards.length || eventCards.length) && lightbox) {
     menuCards.forEach(function (card) {
+      card.style.cursor = 'pointer';
       card.addEventListener('click', function () {
         var img = card.querySelector('.menu-card__image');
+        if (!img) return;
+        openMenuLightbox(img.src, img.alt);
+      });
+    });
+
+    eventCards.forEach(function (card) {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', function () {
+        var img = card.querySelector('.event-card__image') || card.querySelector('.event-card__poster img');
         if (!img) return;
         openMenuLightbox(img.src, img.alt);
       });
@@ -186,5 +197,32 @@
         closeMenuLightbox();
       }
     });
+  }
+
+  // --------------------------------------------------------------------------
+  // Scroll animations for elements with [data-animate]
+  // --------------------------------------------------------------------------
+  var animatedEls = document.querySelectorAll('[data-animate]');
+  if (animatedEls.length) {
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.15
+      });
+
+      animatedEls.forEach(function (el) {
+        observer.observe(el);
+      });
+    } else {
+      animatedEls.forEach(function (el) {
+        el.classList.add('is-visible');
+      });
+    }
   }
 })();

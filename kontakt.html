@@ -10,7 +10,10 @@
 <body>
   <header class="site-header" id="site-header">
     <div class="header-inner">
-      <a href="index.html" class="logo">Restaurace Na <span>Zámku</span></a>
+      <a href="index.html" class="logo">
+        <img src="images/logo.jpg" alt="Logo Restaurace Na Zámku Chrast">
+        <span>Restaurace Na Zámku Chrast</span>
+      </a>
       <nav class="nav-desktop" aria-label="Hlavní navigace">
         <a href="index.html">Úvod</a>
         <a href="prostory.html">Prostory restaurace</a>
@@ -48,7 +51,11 @@
           <div class="contact-info">
             <h2 class="section-title">Kde nás najdete</h2>
             <div class="contact-info__item">
-              <span class="contact-info__icon" aria-hidden="true">📍</span>
+              <span class="contact-info__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2C8.962 2 6.5 4.462 6.5 7.5c0 3.889 4.32 8.897 5.504 10.19.268.288.724.288.992 0C13.18 16.397 17.5 11.389 17.5 7.5 17.5 4.462 15.038 2 12 2zm0 7.5c-1.105 0-2-.896-2-2 0-1.105.895-2 2-2s2 .895 2 2c0 1.104-.895 2-2 2z"/>
+                </svg>
+              </span>
               <div>
                 <div class="contact-info__label">Adresa</div>
                 <div class="contact-info__value">
@@ -59,14 +66,22 @@
               </div>
             </div>
             <div class="contact-info__item">
-              <span class="contact-info__icon" aria-hidden="true">📞</span>
+              <span class="contact-info__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 01.96-.26c1.05.26 2.18.4 3.33.4a1 1 0 011 1V21a1 1 0 01-1 1C11.85 22 2 12.15 2 1a1 1 0 011-1h3.67a1 1 0 011 1c0 1.15.14 2.28.4 3.33a1 1 0 01-.26.96l-2.2 2.2z"/>
+                </svg>
+              </span>
               <div>
                 <div class="contact-info__label">Telefon</div>
                 <div class="contact-info__value"><a href="tel:+420773549795">+420 773 549 795</a></div>
               </div>
             </div>
             <div class="contact-info__item">
-              <span class="contact-info__icon" aria-hidden="true">✉️</span>
+              <span class="contact-info__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M3 4h18a1 1 0 011 1v14a1 1 0 01-1 1H3a1 1 0 01-1-1V5a1 1 0 011-1zm1.4 2l7.6 5.2L19.6 6H4.4zm-.4 2.25V19h16V8.25l-7.2 4.93a1 1 0 01-1.13 0L4 8.25z"/>
+                </svg>
+              </span>
               <div>
                 <div class="contact-info__label">E-mail</div>
                 <div class="contact-info__value"><a href="mailto:info@zameckachrast.cz">info@zameckachrast.cz</a></div>
@@ -74,17 +89,63 @@
             </div>
             <p><strong>RESAL CATERING, s.r.o.</strong></p>
           </div>
+
+          <div>
+            <h3 class="section-title" style="font-size: 1.25rem; margin-top: 0; margin-bottom: var(--space-sm);">Otevírací doba</h3>
+            <div class="opening-hours">
+              <div class="opening-hours__row">
+                <span class="opening-hours__day">Pondělí</span>
+                <span class="opening-hours__time opening-hours__time--closed">Zavřeno</span>
+              </div>
+              <div class="opening-hours__row">
+                <span class="opening-hours__day">Úterý</span>
+                <span class="opening-hours__time">11–21:30</span>
+              </div>
+              <div class="opening-hours__row">
+                <span class="opening-hours__day">Středa</span>
+                <span class="opening-hours__time">11–21:30</span>
+              </div>
+              <div class="opening-hours__row">
+                <span class="opening-hours__day">Čtvrtek</span>
+                <span class="opening-hours__time">11–21:30</span>
+              </div>
+              <div class="opening-hours__row">
+                <span class="opening-hours__day">Pátek</span>
+                <span class="opening-hours__time">11–23</span>
+              </div>
+              <div class="opening-hours__row">
+                <span class="opening-hours__day">Sobota</span>
+                <span class="opening-hours__time">11–23</span>
+              </div>
+              <div class="opening-hours__row">
+                <span class="opening-hours__day">Neděle</span>
+                <span class="opening-hours__time">11–19</span>
+              </div>
+            </div>
+
+            <h3 class="section-title" style="font-size: 1.25rem; margin-top: var(--space-xl); margin-bottom: var(--space-sm);">Sociální sítě</h3>
+            <div class="footer__social">
+              <a href="https://www.facebook.com/RestauraceNaZamkuChrast" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+              <a href="https://www.instagram.com/restaurace_na_zamku_chrast/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </a>
+            </div>
+          </div>
         </div>
 
         <div class="map-wrap">
-          <!-- Placeholder: replace with Google Maps iframe when you have the exact embed URL -->
-          <div class="map-placeholder" id="map-placeholder">
-            <span>Mapa: Restaurace Na Zámku Chrast, Náměstí 1, 538 51 Chrast</span>
-            <a href="https://www.google.com/maps/search/N%C3%A1m%C4%9Bst%C3%AD+1+Chrast" target="_blank" rel="noopener noreferrer">Otevřít v Google Maps</a>
-          </div>
-          <!-- Example embed (uncomment and set correct src when you have it):
-          <iframe src="https://www.google.com/maps/embed?pb=..." title="Poloha Restaurace Na Zámku Chrast"></iframe>
-          -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6848.244388263871!2d15.93518553232348!3d49.89829178938481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470db7bf98060a7d%3A0x93019dbac3e245ba!2sRestaurace%20Na%20Z%C3%A1mku!5e0!3m2!1scs!2scz!4v1773228343787!5m2!1scs!2scz"
+            width="600"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa – Restaurace Na Zámku Chrast"
+          ></iframe>
         </div>
       </div>
     </section>
@@ -103,6 +164,7 @@
               <a href="index.html">Úvod</a>
               <a href="prostory.html">Prostory restaurace</a>
               <a href="ctyri-pepre.html">4 Pepře</a>
+              <a href="menu.html">Menu</a>
               <a href="kontakt.html">Kontakt</a>
             </div>
             <div class="footer__social">
@@ -116,7 +178,7 @@
           </div>
         </div>
         <div class="footer__bottom">
-          © RESAL CATERING, s.r.o. · Restaurace Na Zámku Chrast
+          © RESAL CATERING, s.r.o. · Restaurace Na Zámku Chrast · 2026
         </div>
       </div>
     </footer>

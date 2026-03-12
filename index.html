@@ -10,7 +10,10 @@
 <body>
   <header class="site-header" id="site-header">
     <div class="header-inner">
-      <a href="index.html" class="logo">Restaurace Na <span>Zámku</span></a>
+      <a href="index.html" class="logo">
+        <img src="images/logo.jpg" alt="Logo Restaurace Na Zámku Chrast">
+        <span>Restaurace Na Zámku Chrast</span>
+      </a>
       <nav class="nav-desktop" aria-label="Hlavní navigace">
         <a href="index.html" class="active">Úvod</a>
         <a href="prostory.html">Prostory restaurace</a>
@@ -45,7 +48,7 @@
         <div class="hero__poster" aria-hidden="true"></div>
       </div>
       <div class="hero__overlay" aria-hidden="true"></div>
-      <div class="hero__content">
+      <div class="hero__content" data-animate>
         <h1 class="hero__title">Restaurace Na Zámku Chrast</h1>
         <p class="hero__tagline">Poctivá kuchyně v historickém prostředí zámku. 70 % chuti tvoří surovina — proto nakupujeme u českých farmářů.</p>
         <a href="kontakt.html#rezervace" class="btn btn--outline">Rezervovat</a>
@@ -54,7 +57,7 @@
 
     <!-- O restauraci -->
     <section class="section" id="o-restauraci">
-      <div class="container">
+      <div class="container" data-animate>
         <div class="about-grid">
           <div class="about-grid__media">
             <img src="images/prvni_fotka.jpeg" alt="Atmosféra restaurace Na Zámku Chrast" class="about-grid__img">
@@ -75,7 +78,7 @@
 
     <!-- Ocenění – Hvězda sládků -->
     <section class="section section--cream awards" aria-labelledby="awards-title">
-      <div class="container">
+      <div class="container" data-animate>
         <div class="awards__grid">
           <div class="awards__content">
             <header class="awards__header">
@@ -110,11 +113,10 @@
       </div>
     </section>
 
-    <!-- Hodnocení -->
-    <section class="section">
-      <div class="container">
+    <section class="section section--compact">
+      <div class="container" data-animate>
         <h2 class="section-title text-center">Hodnocení hostů</h2>
-        <p class="section-subtitle text-center">Průměrné hodnocení na vybraných platformách.</p>
+        <p class="section-subtitle section-subtitle--tight text-center">Průměrné hodnocení na vybraných platformách.</p>
         <div class="ratings">
           <div class="rating-card">
             <div class="rating-card__source">Google</div>
@@ -130,30 +132,18 @@
       </div>
     </section>
 
-    <!-- Akce -->
-    <section class="section section--dark">
-      <div class="container">
+    <section class="section section--dark section--compact">
+      <div class="container" data-animate>
         <h2 class="section-title text-center">Akce a události</h2>
         <p class="section-subtitle text-center">Pravidelné i mimořádné akce v restauraci Na Zámku.</p>
         <div class="events-grid">
           <article class="event-card">
-            <div class="event-card__poster">
-              <div class="placeholder-img" style="width:100%;height:100%;">Plakát akce 1</div>
+            <div class="event-card__poster event-card__poster--square">
+              <img src="images/degustace_tataraku.jpg" alt="Plakát degustace tataráků" class="event-card__image">
             </div>
             <div class="event-card__body">
-              <div class="event-card__date">Každý pátek</div>
-              <h3 class="event-card__title">Páteční speciály</h3>
-              <p class="event-card__desc">Každý pátek připravujeme speciální menu a živou hudbu. Rezervace doporučena.</p>
-            </div>
-          </article>
-          <article class="event-card">
-            <div class="event-card__poster">
-              <div class="placeholder-img" style="width:100%;height:100%;">Plakát akce 2</div>
-            </div>
-            <div class="event-card__body">
-              <div class="event-card__date">Dle kalendáře</div>
-              <h3 class="event-card__title">Degustační večery</h3>
-              <p class="event-card__desc">Degustační menu s výběrem vín a sezónních specialit. Sledujte naše stránky a Facebook.</p>
+              <h3 class="event-card__title">Degustace tataráků</h3>
+              <p class="event-card__desc">Ukázková akce: večer zaměřený na různé podoby tataráku v zámecké atmosféře.</p>
             </div>
           </article>
         </div>
@@ -222,35 +212,52 @@
       </div>
     </section>
 
+    <!-- Lightbox pro akce (sdílený s menu) -->
+    <div class="menu-lightbox" id="menu-lightbox" aria-hidden="true">
+      <div class="menu-lightbox__overlay"></div>
+      <div class="menu-lightbox__content" role="dialog" aria-modal="true">
+        <button class="menu-lightbox__close" type="button" aria-label="Zavřít">
+          &times;
+        </button>
+        <img src="" alt="" class="menu-lightbox__image" />
+      </div>
+    </div>
+
     <!-- Galerie -->
     <section class="section section--cream">
-      <div class="container">
+      <div class="container" data-animate>
         <h2 class="section-title text-center">Galerie</h2>
         <p class="section-subtitle text-center">Atmosféra zámku, restaurace a okolí.</p>
         <div class="gallery" id="home-gallery">
           <div class="gallery__item gallery__item--wide">
-            <div class="placeholder-img" style="width:100%;height:100%;">Placeholder: foto 1</div>
+            <img src="images/fotka_1.jpg" alt="Foto 1 – atmosféra restaurace" class="gallery__image">
           </div>
           <div class="gallery__item">
-            <div class="placeholder-img" style="width:100%;height:100%;">Placeholder: foto 2</div>
+            <img src="images/fotka_2.jpg" alt="Foto 2 – atmosféra restaurace" class="gallery__image">
           </div>
           <div class="gallery__item gallery__item--tall">
-            <div class="placeholder-img" style="width:100%;height:100%;">Placeholder: foto 3</div>
+            <img src="images/fotka_3.jpg" alt="Foto 3 – atmosféra restaurace" class="gallery__image">
           </div>
           <div class="gallery__item">
-            <div class="placeholder-img" style="width:100%;height:100%;">Placeholder: foto 4</div>
+            <img src="images/fotka_4.jpg" alt="Foto 4 – atmosféra restaurace" class="gallery__image">
           </div>
           <div class="gallery__item">
-            <div class="placeholder-img" style="width:100%;height:100%;">Placeholder: foto 5</div>
+            <img src="images/fotka_1.jpg" alt="Foto 5 – atmosféra restaurace" class="gallery__image">
           </div>
           <div class="gallery__item gallery__item--wide gallery__item--large">
-            <div class="placeholder-img" style="width:100%;height:100%;">Placeholder: foto 6</div>
+            <img src="images/fotka_2.jpg" alt="Foto 6 – atmosféra restaurace" class="gallery__image">
           </div>
           <div class="gallery__item">
-            <div class="placeholder-img" style="width:100%;height:100%;">Placeholder: foto 7</div>
+            <img src="images/fotka_3.jpg" alt="Foto 7 – atmosféra restaurace" class="gallery__image">
           </div>
           <div class="gallery__item">
-            <div class="placeholder-img" style="width:100%;height:100%;">Placeholder: foto 8</div>
+            <img src="images/fotka_4.jpg" alt="Foto 8 – atmosféra restaurace" class="gallery__image">
+          </div>
+          <div class="gallery__item">
+            <img src="images/fotka_1.jpg" alt="Foto 9 – atmosféra restaurace" class="gallery__image">
+          </div>
+          <div class="gallery__item gallery__item--wide">
+            <img src="images/fotka_2.jpg" alt="Foto 10 – atmosféra restaurace" class="gallery__image">
           </div>
         </div>
       </div>
@@ -271,6 +278,7 @@
               <a href="index.html">Úvod</a>
               <a href="prostory.html">Prostory restaurace</a>
               <a href="ctyri-pepre.html">4 Pepře</a>
+              <a href="menu.html">Menu</a>
               <a href="kontakt.html">Kontakt</a>
             </div>
             <div class="footer__social">
@@ -284,7 +292,7 @@
           </div>
         </div>
         <div class="footer__bottom">
-          © RESAL CATERING, s.r.o. · Restaurace Na Zámku Chrast
+          © RESAL CATERING, s.r.o. · Restaurace Na Zámku Chrast · 2026
         </div>
       </div>
     </footer>
