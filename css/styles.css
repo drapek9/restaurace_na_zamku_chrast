@@ -179,6 +179,12 @@ p { margin: 0 0 var(--space-md); }
   object-fit: cover;
 }
 
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.05rem;
+  }
+}
+
 .nav-desktop {
   display: none;
 }
@@ -219,9 +225,16 @@ p { margin: 0 0 var(--space-md); }
   background: var(--color-primary);
   color: var(--color-light);
   border-radius: 999px;
-  padding: 0.5rem 1rem;
-  display: inline-block;
-  margin-top: 0.25rem;
+  padding: 0.6rem 1.6rem;
+  display: block;
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-md);
+  border-bottom: none;
+  box-shadow: 0 4px 14px rgba(44, 36, 32, 0.25);
+  text-align: center;
+  max-width: 260px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Mobile menu */
