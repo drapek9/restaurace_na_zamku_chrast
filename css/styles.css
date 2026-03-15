@@ -433,6 +433,12 @@ p { margin: 0 0 var(--space-md); }
   overflow: hidden;
   box-shadow: var(--shadow);
 }
+.about-grid__media {
+  transition: transform var(--duration) var(--ease);
+}
+.about-grid__media:hover {
+  transform: scale(1.03);
+}
 .about-grid__media .placeholder-img,
 .about-grid__media img {
   width: 100%;
@@ -753,7 +759,10 @@ p { margin: 0 0 var(--space-md); }
 }
 .menu-lightbox__image {
   max-width: 100%;
-  max-height: 100%;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
   border-radius: var(--radius-lg);
   box-shadow: 0 24px 72px rgba(0, 0, 0, 0.6);
   background: var(--color-bg-dark);
@@ -769,6 +778,41 @@ p { margin: 0 0 var(--space-md); }
   line-height: 1;
   cursor: pointer;
   padding: 0;
+}
+
+.menu-lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--color-dark);
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: background var(--duration) var(--ease), transform var(--duration) var(--ease);
+  z-index: 2;
+}
+.menu-lightbox__nav:hover {
+  background: #fff;
+  transform: translateY(-50%) scale(1.08);
+}
+.menu-lightbox.is-gallery .menu-lightbox__nav {
+  visibility: visible;
+  pointer-events: auto;
+}
+.menu-lightbox__nav--prev { left: 1rem; }
+.menu-lightbox__nav--next { right: 1rem; }
+@media (min-width: 768px) {
+  .menu-lightbox__nav { width: 4rem; height: 4rem; font-size: 2rem; }
+  .menu-lightbox__nav--prev { left: 2rem; }
+  .menu-lightbox__nav--next { right: 2rem; }
 }
 
 /* --------------------------------------------------------------------------
@@ -837,6 +881,16 @@ p { margin: 0 0 var(--space-md); }
   .event-card {
     max-width: 360px;
     width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .events-grid--two {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: stretch;
+    max-width: 720px;
+  }
+  .events-grid--two .event-card {
+    max-width: none;
   }
 }
 .event-card {
@@ -926,6 +980,12 @@ p { margin: 0 0 var(--space-md); }
 @media (min-width: 640px) {
   .gallery__item--large { grid-column: span 2; grid-row: span 2; }
 }
+.gallery__item {
+  transition: transform var(--duration) var(--ease);
+}
+.gallery__item:hover {
+  transform: scale(1.03);
+}
 .gallery__item img,
 .gallery__item .placeholder-img {
   width: 100%;
@@ -942,11 +1002,12 @@ p { margin: 0 0 var(--space-md); }
 }
 @media (min-width: 640px) { .gallery__item .placeholder-img { font-size: 0.85rem; } }
 
-/* Prostory page gallery */
+/* Prostory page gallery + Fotogalerie food trucku (4 Pepře) */
 .gallery-prostory {
   display: grid;
-  gap: var(--space-md);
   grid-template-columns: repeat(1, 1fr);
+  column-gap: var(--space-xl);
+  row-gap: calc(var(--space-xl) * 2); /* výrazně větší mezera vertikálně */
 }
 @media (min-width: 640px) { .gallery-prostory { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1024px) { .gallery-prostory { grid-template-columns: repeat(3, 1fr); } }
@@ -961,13 +1022,44 @@ p { margin: 0 0 var(--space-md); }
    Page header (inner pages)
    -------------------------------------------------------------------------- */
 .page-hero {
-  /* padding-top: calc(var(--header-height) + var(--space-3xl)); */
   padding-top: var(--space-2xl);
   padding-bottom: var(--space-2xl);
   background: linear-gradient(180deg, var(--color-dark) 0%, var(--color-primary) 100%);
   color: var(--color-light);
   text-align: center;
 }
+
+/* Hero s obrázkovým pozadím (4 Pepře – fotka food tracku) */
+.page-hero--with-bg {
+  position: relative;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: calc(var(--header-height) + var(--space-2xl));
+  padding-bottom: var(--space-2xl);
+  background: var(--color-dark);
+}
+.page-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+.page-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(44, 36, 32, 0.7);
+  z-index: 1;
+}
+.page-hero__content {
+  position: relative;
+  z-index: 2;
+}
+
 .page-hero--compact {
   padding-top: calc(var(--header-height) + var(--space-xl));
   padding-bottom: var(--space-xl);
@@ -985,6 +1077,27 @@ p { margin: 0 0 var(--space-md); }
   max-width: 40ch;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* 4 Pepře – jeden obrázek akcí (stejná šířka a chování jako fotka menu) */
+.akce-roku-wrap {
+  max-width: 360px;
+  margin: 0 auto;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(44, 36, 32, 0.15);
+  cursor: pointer;
+  transition: transform var(--duration) var(--ease), box-shadow var(--duration) var(--ease);
+}
+.akce-roku-wrap:hover {
+  transform: scale(1.03);
+  box-shadow: 0 14px 40px rgba(44, 36, 32, 0.2);
+}
+.akce-roku-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  vertical-align: top;
 }
 
 /* --------------------------------------------------------------------------

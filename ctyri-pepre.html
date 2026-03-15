@@ -39,27 +39,65 @@
   </nav>
 
   <main>
-    <header class="page-hero">
-      <div class="container">
+    <header class="page-hero page-hero--with-bg">
+      <div class="page-hero__bg" style="background-image: url('images/4_pepre/fotka_foodtracku.jpg');" aria-hidden="true"></div>
+      <div class="page-hero__overlay" aria-hidden="true"></div>
+      <div class="container page-hero__content">
         <h1 class="page-hero__title">4 Pepře</h1>
-        <p class="page-hero__subtitle">Sem text o 4 Pepřích</p>
+        <p class="page-hero__subtitle">Catering a food truck — zážitky na míru. Kde nás najdete a jak vypadáme.</p>
       </div>
     </header>
 
-    <section class="section" style="display: none;">
+    <section class="section">
       <div class="container">
         <div class="about-grid">
           <div class="about-grid__media">
-            <div class="placeholder-img" style="aspect-ratio: 4/3;">Placeholder: koncept 4 Pepře (ilustrační foto)</div>
+            <img src="images/4_pepre/fotka_foodtracku.jpg" alt="Foodtrack restaurace Na Zámku Chrast" class="about-grid__img">
           </div>
           <div class="about-grid__text">
-            <h2 class="section-title">Co jsou 4 Pepře?</h2>
+            <h2 class="section-title">4 Pepře - catering a food truck</h2>
             <p class="section-subtitle">
-              Koncept „4 Pepře“ vystihuje čtyři základní hodnoty naší restaurace: kvalita surovin, řemeslná příprava, prostředí zámku a pohostinnost. Každý „pepř“ představuje jeden pilíř, bez kterého by chuť zážitku nebyla kompletní.
+              „4 Pepře“ je náš catering a food truck. Přinášíme stejnou péči o suroviny, řemeslnou přípravu a pohostinnost přímo na vaše akce, festivaly a firemní setkání.
             </p>
             <p>
-              Inspirujeme se tradicí i moderní gastronomií a věříme, že nejlepší jídlo vzniká z respektu k surovině, místu a lidem kolem stolu.
+              Jde nám o zážitky: ať už jíte u nás na zámku, nebo z food trucku na koncertě či svatbě, chceme, aby každé sousto bylo důvodem k úsměvu. Kvalitní české suroviny, poctivá kuchyně a lidský přístup — to jsou 4 Pepře na cestách.
             </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--cream">
+      <div class="container">
+        <h2 class="section-title text-center">Kde nás tento rok najdete</h2>
+        <div class="akce-roku-wrap">
+          <img src="images/4_pepre/sezona_catering.jpg" alt="Akce a místa, kde nás v této sezóně najdete" class="akce-roku-img">
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title text-center">Fotogalerie food trucku</h2>
+        <p class="section-subtitle text-center">Atmosféra, jídlo a zážitky z akcí s naším food truckem.</p>
+        <div class="gallery gallery-prostory" id="foodtrack-gallery">
+          <div class="gallery__item">
+            <img src="images/4_pepre/fotka_1.jpg" alt="Food truck – foto 1" class="gallery__image">
+          </div>
+          <div class="gallery__item">
+            <img src="images/4_pepre/fotka_2.jpg" alt="Food truck – foto 2" class="gallery__image">
+          </div>
+          <div class="gallery__item">
+            <img src="images/4_pepre/fotka_3.jpg" alt="Food truck – foto 3" class="gallery__image">
+          </div>
+          <div class="gallery__item">
+            <img src="images/4_pepre/fotka_4.jpg" alt="Food truck – foto 4" class="gallery__image">
+          </div>
+          <div class="gallery__item">
+            <img src="images/4_pepre/fotka_5.jpg" alt="Food truck – foto 5" class="gallery__image">
+          </div>
+          <div class="gallery__item">
+            <img src="images/4_pepre/fotka_6.jpg" alt="Food truck – foto 6" class="gallery__image">
           </div>
         </div>
       </div>
@@ -120,6 +158,16 @@
         <a href="kontakt.html" class="btn btn--dark">Kontakt a rezervace</a>
       </div>
     </section>
+
+    <div class="menu-lightbox" id="menu-lightbox" aria-hidden="true">
+      <div class="menu-lightbox__overlay"></div>
+      <div class="menu-lightbox__content" role="dialog" aria-modal="true">
+        <button class="menu-lightbox__close" type="button" aria-label="Zavřít">&times;</button>
+        <button class="menu-lightbox__nav menu-lightbox__nav--prev" type="button" aria-label="Předchozí obrázek">&lsaquo;</button>
+        <button class="menu-lightbox__nav menu-lightbox__nav--next" type="button" aria-label="Další obrázek">&rsaquo;</button>
+        <img src="" alt="" class="menu-lightbox__image" />
+      </div>
+    </div>
 
     <footer class="site-footer">
       <div class="container">

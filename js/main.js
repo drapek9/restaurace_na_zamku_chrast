@@ -148,11 +148,22 @@
   var lightboxImage = lightbox && lightbox.querySelector('.menu-lightbox__image');
   var lightboxClose = lightbox && lightbox.querySelector('.menu-lightbox__close');
   var lightboxOverlay = lightbox && lightbox.querySelector('.menu-lightbox__overlay');
+  var lightboxPrev = lightbox && lightbox.querySelector('.menu-lightbox__nav--prev');
+  var lightboxNext = lightbox && lightbox.querySelector('.menu-lightbox__nav--next');
 
-  function openMenuLightbox(src, alt) {
+  var lightboxGallery = null;
+
+  function openMenuLightbox(src, alt, opts) {
     if (!lightbox || !lightboxImage) return;
     lightboxImage.src = src || '';
     lightboxImage.alt = alt || '';
+    if (opts && opts.galleryItems && opts.galleryItems.length > 0 && opts.index != null) {
+      lightboxGallery = { items: opts.galleryItems, index: opts.index };
+      lightbox.classList.add('is-gallery');
+    } else {
+      lightboxGallery = null;
+      lightbox.classList.remove('is-gallery');
+    }
     lightbox.classList.add('is-open');
     lightbox.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
@@ -161,12 +172,62 @@
   function closeMenuLightbox() {
     if (!lightbox || !lightboxImage) return;
     lightbox.classList.remove('is-open');
+    lightbox.classList.remove('is-gallery');
     lightbox.setAttribute('aria-hidden', 'true');
     lightboxImage.src = '';
+    lightboxImage.alt = '';
+    lightboxGallery = null;
     document.body.style.overflow = '';
   }
 
-  if ((menuCards.length || eventCards.length) && lightbox) {
+  function lightboxGoPrev() {
+    if (!lightboxGallery || !lightboxImage) return;
+    lightboxGallery.index = (lightboxGallery.index - 1 + lightboxGallery.items.length) % lightboxGallery.items.length;
+    var item = lightboxGallery.items[lightboxGallery.index];
+    lightboxImage.src = item.src;
+    lightboxImage.alt = item.alt;
+  }
+
+  function lightboxGoNext() {
+    if (!lightboxGallery || !lightboxImage) return;
+    lightboxGallery.index = (lightboxGallery.index + 1) % lightboxGallery.items.length;
+    var item = lightboxGallery.items[lightboxGallery.index];
+    lightboxImage.src = item.src;
+    lightboxImage.alt = item.alt;
+  }
+
+  if (lightbox) {
+    if (lightboxClose) {
+      lightboxClose.addEventListener('click', closeMenuLightbox);
+    }
+    if (lightboxOverlay) {
+      lightboxOverlay.addEventListener('click', closeMenuLightbox);
+    }
+    if (lightboxPrev) {
+      lightboxPrev.addEventListener('click', function (e) { e.stopPropagation(); lightboxGoPrev(); });
+    }
+    if (lightboxNext) {
+      lightboxNext.addEventListener('click', function (e) { e.stopPropagation(); lightboxGoNext(); });
+    }
+    document.addEventListener('keydown', function (e) {
+      if (!lightbox.classList.contains('is-open')) return;
+      if (e.key === 'Escape') {
+        closeMenuLightbox();
+        return;
+      }
+      if (lightboxGallery) {
+        if (e.key === 'ArrowLeft') {
+          lightboxGoPrev();
+          e.preventDefault();
+        } else if (e.key === 'ArrowRight') {
+          lightboxGoNext();
+          e.preventDefault();
+        }
+      }
+    });
+  }
+
+  if (menuCards.length && lightbox) {
     menuCards.forEach(function (card) {
       card.style.cursor = 'pointer';
       card.addEventListener('click', function () {
@@ -175,7 +236,9 @@
         openMenuLightbox(img.src, img.alt);
       });
     });
+  }
 
+  if (eventCards.length && lightbox) {
     eventCards.forEach(function (card) {
       card.style.cursor = 'pointer';
       card.addEventListener('click', function () {
@@ -184,18 +247,33 @@
         openMenuLightbox(img.src, img.alt);
       });
     });
+  }
 
-    if (lightboxClose) {
-      lightboxClose.addEventListener('click', closeMenuLightbox);
-    }
-    if (lightboxOverlay) {
-      lightboxOverlay.addEventListener('click', closeMenuLightbox);
-    }
+  var akceRokuWraps = document.querySelectorAll('.akce-roku-wrap');
+  if (akceRokuWraps.length && lightbox) {
+    akceRokuWraps.forEach(function (wrap) {
+      wrap.addEventListener('click', function () {
+        var img = wrap.querySelector('.akce-roku-img');
+        if (!img) return;
+        openMenuLightbox(img.src, img.alt);
+      });
+    });
+  }
 
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && lightbox && lightbox.classList.contains('is-open')) {
-        closeMenuLightbox();
-      }
+  var foodtrackGallery = document.getElementById('foodtrack-gallery');
+  if (foodtrackGallery && lightbox) {
+    var galleryItems = [];
+    foodtrackGallery.querySelectorAll('.gallery__item').forEach(function (item) {
+      var img = item.querySelector('img');
+      galleryItems.push({ src: img ? img.src || '' : '', alt: img ? img.alt || '' : '' });
+    });
+    foodtrackGallery.querySelectorAll('.gallery__item').forEach(function (item, index) {
+      item.style.cursor = 'pointer';
+      item.addEventListener('click', function () {
+        var img = item.querySelector('img');
+        if (!img) return;
+        openMenuLightbox(img.src, img.alt, { galleryItems: galleryItems, index: index });
+      });
     });
   }
 
