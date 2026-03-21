@@ -31,7 +31,7 @@
   </header>
   <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
   <nav class="nav-mobile" id="nav-mobile" aria-label="Mobilní menu">
-    <a href="index.html">Úvod</a>
+    <a href="index.html" class="active">Úvod</a>
     <a href="prostory.html">Prostory restaurace</a>
     <a href="ctyri-pepre.html">4 Pepře</a>
     <a href="menu.html" class="nav-menu">Menu</a>
@@ -52,7 +52,10 @@
       <div class="hero__content" data-animate>
         <h1 class="hero__title">Restaurace Na Zámku Chrast</h1>
         <p class="hero__tagline">Poctivá kuchyně v historickém prostředí zámku. 70 % chuti tvoří surovina — proto nakupujeme u českých farmářů.</p>
-        <a href="kontakt.html#rezervace" class="btn btn--outline">Rezervovat</a>
+        <div class="hero__actions">
+          <a href="kontakt.html#rezervace" class="btn btn--outline">Rezervovat</a>
+          <a href="menu.html" class="btn btn--dark">Menu</a>
+        </div>
       </div>
     </section>
 
@@ -64,13 +67,21 @@
             <img src="images/prvni_fotka.jpeg" alt="Atmosféra restaurace Na Zámku Chrast" class="about-grid__img">
           </div>
           <div class="about-grid__text">
-            <h2 class="section-title">O restauraci</h2>
-            <p class="section-subtitle">
+            <h2 class="section-title">Zázemí restaurace</h2>
+            <!-- <h2 class="section-title">O restauraci</h2> -->
+            <!-- <p class="section-subtitle">
               Vítá vás Restaurace Na Zámku Chrast. Sídlíme v historické budově zámku na náměstí v Chrasti a nabízíme poctivou kuchyni v elegantním a útulném prostředí.
             </p>
             <p>
               70 % chuti jídla tvoří surovina, 30 % dotváří kuchař. Proto nakupujeme u českých farmářů a dbáme na sezónní a lokální ingredience. Přijďte si vychutnat oběd, večeři nebo posezení na naší zahrádce.
-            </p>
+            </p> -->
+           
+            <ul class="about-grid__highlights">
+              <li>Restaurace</li>
+              <li>Venkovní terasa</li>
+              <li>Salónek</li>
+              <li>Vinárna</li>
+            </ul>
             <a href="prostory.html" class="btn btn--dark">Prohlédnout prostory</a>
           </div>
         </div>
@@ -90,6 +101,9 @@
             </header>
             <div class="awards__divider" aria-hidden="true"></div>
             <p class="awards__desc">Jsme hrdí na ocenění Hvězda sládků, které odráží naši snahu o kvalitní gastronomii a pohostinnost v prostředí zámku Chrast.</p>
+            <p class="awards__what-line">
+              <a href="https://www.prazdroj.cz/nase-znacky/hvezda-sladku" class="awards__what-link" target="_blank" rel="noopener noreferrer">Co je to hvězda sládků?</a>
+            </p>
             <div class="awards__badges">
               <div class="award-card">
                 <span class="award-card__icon" aria-hidden="true">
@@ -119,16 +133,16 @@
         <h2 class="section-title text-center">Hodnocení hostů</h2>
         <p class="section-subtitle section-subtitle--tight text-center">Průměrné hodnocení na vybraných platformách.</p>
         <div class="ratings">
-          <div class="rating-card">
+          <a href="https://www.google.com/travel/search?gsas=1&amp;ts=EggKAggDCgIIAxocEhoSFAoHCOoPEAUYDhIHCOoPEAUYDxgBMgIQAA&amp;qs=MhRDZ3NJdW91Sm42eTM1NENUQVJBQjgC&amp;ap=KigKEgkijOlltvJIQBFqFoofFd0vQBISCa0cVczv80hAEWoWil_f4S9AugEHcmV2aWV3cw&amp;ictx=111&amp;rlz=1C1VDKB_csCZ1062CZ1062&amp;hl=cs-CZ&amp;ved=0CAAQ5JsGahcKEwjAlbzStbCTAxUAAAAAHQAAAAAQBA" class="rating-card" target="_blank" rel="noopener noreferrer" aria-label="Recenze Restaurace Na Zámku na Google">
             <div class="rating-card__source">Google</div>
             <div class="rating-card__stars" aria-hidden="true">★★★★★</div>
             <div class="rating-card__value">4,7</div>
-          </div>
-          <div class="rating-card">
+          </a>
+          <a href="https://www.facebook.com/RestauraceNaZamkuChrast/reviews" class="rating-card" target="_blank" rel="noopener noreferrer" aria-label="Recenze Restaurace Na Zámku na Facebooku">
             <div class="rating-card__source">Facebook</div>
             <div class="rating-card__stars" aria-hidden="true">★★★★★</div>
             <div class="rating-card__value">98 %</div>
-          </div>
+          </a>
         </div>
       </div>
     </section>
@@ -161,25 +175,32 @@
         <div class="suppliers__track">
           <div class="suppliers__group">
             <div class="suppliers__logo">
-              <img src="images/dodavatele/farma_martin_novotny.png" alt="Dodavatel 1" onerror="this.style.display='none'">
+              <img src="images/dodavatele/farma_martin_novotny.png" alt="Farma Martina Novotného" onerror="this.style.display='none'">
+              <span class="suppliers__logo-hint">Farma Martina Novotného – česká rodinná farma</span>
             </div>
             <div class="suppliers__logo">
-              <img src="images/dodavatele/frantisek_sutera.png" alt="Dodavatel 2" onerror="this.style.display='none'">
+              <img src="images/dodavatele/frantisek_sutera.png" alt="František Šutera" onerror="this.style.display='none'">
+              <span class="suppliers__logo-hint">František Šutera – dodavatel masa a uzenin</span>
             </div>
             <div class="suppliers__logo">
-              <img src="images/dodavatele/samuhel_platensko.png" alt="Dodavatel 3" onerror="this.style.display='none'">
+              <img src="images/dodavatele/samuhel_platensko.png" alt="Samuhel Platensko" onerror="this.style.display='none'">
+              <span class="suppliers__logo-hint">Samuhel Platensko – regionální producent</span>
             </div>
             <div class="suppliers__logo">
-              <img src="images/dodavatele/farma_rodiny_nemcovy_netin.png" alt="Dodavatel 4" onerror="this.style.display='none'">
+              <img src="images/dodavatele/farma_rodiny_nemcovy_netin.png" alt="Farma rodiny Němcovy, Netín" onerror="this.style.display='none'">
+              <span class="suppliers__logo-hint">Farma rodiny Němcovy, Netín</span>
             </div>
             <div class="suppliers__logo">
-              <img src="images/dodavatele/farma_tegl.png" alt="Dodavatel 5" onerror="this.style.display='none'">
+              <img src="images/dodavatele/farma_tegl.png" alt="Farma Tegl" onerror="this.style.display='none'">
+              <span class="suppliers__logo-hint">Farma Tegl</span>
             </div>
             <div class="suppliers__logo">
-              <img src="images/dodavatele/mlyn_janderov.png" alt="Dodavatel 6" onerror="this.style.display='none'">
+              <img src="images/dodavatele/mlyn_janderov.png" alt="Mlýn Janderov" onerror="this.style.display='none'">
+              <span class="suppliers__logo-hint">Mlýn Janderov – mouka a obilniny</span>
             </div>
             <div class="suppliers__logo">
-              <img src="images/dodavatele/zd_rosice.png" alt="Dodavatel 7" onerror="this.style.display='none'">
+              <img src="images/dodavatele/zd_rosice.png" alt="ZD Rosice" onerror="this.style.display='none'">
+              <span class="suppliers__logo-hint">Zemědělské družstvo Rosice</span>
             </div>
             <div class="suppliers__text">Mlékárna Marie Černilová</div>
             <div class="suppliers__text">Manželé Pasekovi</div>
@@ -187,24 +208,31 @@
           <div class="suppliers__group" aria-hidden="true">
             <div class="suppliers__logo">
               <img src="images/dodavatele/farma_martin_novotny.png" alt="" onerror="this.style.display='none'">
+              <span class="suppliers__logo-hint" aria-hidden="true"></span>
             </div>
             <div class="suppliers__logo">
               <img src="images/dodavatele/frantisek_sutera.png" alt="" onerror="this.style.display='none'">
+              <span class="suppliers__logo-hint" aria-hidden="true"></span>
             </div>
             <div class="suppliers__logo">
               <img src="images/dodavatele/samuhel_platensko.png" alt="" onerror="this.style.display='none'">
+              <span class="suppliers__logo-hint" aria-hidden="true"></span>
             </div>
             <div class="suppliers__logo">
               <img src="images/dodavatele/farma_rodiny_nemcovy_netin.png" alt="" onerror="this.style.display='none'">
+              <span class="suppliers__logo-hint" aria-hidden="true"></span>
             </div>
             <div class="suppliers__logo">
               <img src="images/dodavatele/farma_tegl.png" alt="" onerror="this.style.display='none'">
+              <span class="suppliers__logo-hint" aria-hidden="true"></span>
             </div>
             <div class="suppliers__logo">
               <img src="images/dodavatele/mlyn_janderov.png" alt="" onerror="this.style.display='none'">
+              <span class="suppliers__logo-hint" aria-hidden="true"></span>
             </div>
             <div class="suppliers__logo">
               <img src="images/dodavatele/zd_rosice.png" alt="" onerror="this.style.display='none'">
+              <span class="suppliers__logo-hint" aria-hidden="true"></span>
             </div>
             <div class="suppliers__text">Mlékárna Marie Černilová</div>
             <div class="suppliers__text">Manželé Pasekovi</div>

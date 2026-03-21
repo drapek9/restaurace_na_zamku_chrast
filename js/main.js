@@ -136,6 +136,13 @@
           secondLogos[i].src = img.src;
         }
       });
+      var firstHints = groups[0].querySelectorAll('.suppliers__logo-hint');
+      var secondHints = groups[1].querySelectorAll('.suppliers__logo-hint');
+      firstHints.forEach(function (hint, i) {
+        if (secondHints[i] && hint.textContent.trim()) {
+          secondHints[i].textContent = hint.textContent;
+        }
+      });
     }
   }
 
