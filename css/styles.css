@@ -1018,6 +1018,197 @@ p { margin: 0 0 var(--space-md); }
 }
 .gallery-prostory .gallery__item .placeholder-img { aspect-ratio: 4/3; }
 
+/* Prostory restaurace – sekce pod sebou */
+.prostory-section {
+  border-top: 1px solid rgba(44, 36, 32, 0.08);
+}
+.prostory-section:first-of-type {
+  border-top: none;
+}
+
+/* Prostory restaurace – asymetrický grid (wide / tall / large), dense pro menší díry */
+.prostory-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  grid-auto-flow: row dense;
+  gap: var(--space-md);
+  align-items: stretch;
+}
+@media (min-width: 640px) {
+  .prostory-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 185px;
+  }
+}
+@media (min-width: 1024px) {
+  .prostory-gallery {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 200px;
+  }
+}
+@media (min-width: 1280px) {
+  .prostory-gallery {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 210px;
+  }
+}
+
+.prostory-gallery .gallery__item {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 0;
+  margin: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transform-origin: center;
+  transition: transform var(--duration) var(--ease), box-shadow var(--duration) var(--ease), opacity 0.45s var(--ease);
+  opacity: 0;
+  animation: prostory-fade-in 0.55s var(--ease) forwards;
+  aspect-ratio: 5/4;
+}
+
+@media (min-width: 640px) {
+  .prostory-gallery .gallery__item {
+    aspect-ratio: unset;
+    height: 100%;
+  }
+}
+
+/* Mobily: jeden sloupec → žádné span (globální wide/tall by rozbily layout) */
+@media (max-width: 639px) {
+  .prostory-gallery .gallery__item--wide,
+  .prostory-gallery .gallery__item--tall,
+  .prostory-gallery .gallery__item--large {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+
+@media (min-width: 640px) {
+  .prostory-gallery .gallery__item--wide {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+  .prostory-gallery .gallery__item--tall {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+}
+
+/* Na tabletu 2 sloupce: „large“ jen přes šířku (1 řádek), ať nesežere celou galerii */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .prostory-gallery .gallery__item--large {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .prostory-gallery .gallery__item--large {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
+
+/* Interiér: přesně 4 řádky na širokém desktopu (žádný obrázek v 5. řadě) */
+@media (min-width: 1280px) {
+  .prostory-gallery[data-gallery="interier"] {
+    grid-template-rows: repeat(4, 210px);
+    grid-auto-rows: 210px;
+  }
+  .prostory-gallery[data-gallery="interier"] > .gallery__item:nth-child(1) {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+  }
+  .prostory-gallery[data-gallery="interier"] > .gallery__item:nth-child(2) {
+    grid-column: 3 / 5;
+    grid-row: 1 / 2;
+  }
+  .prostory-gallery[data-gallery="interier"] > .gallery__item:nth-child(3) {
+    grid-column: 3;
+    grid-row: 2;
+  }
+  .prostory-gallery[data-gallery="interier"] > .gallery__item:nth-child(4) {
+    grid-column: 4;
+    grid-row: 2;
+  }
+  .prostory-gallery[data-gallery="interier"] > .gallery__item:nth-child(5) {
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+  }
+  .prostory-gallery[data-gallery="interier"] > .gallery__item:nth-child(6) {
+    grid-column: 3;
+    grid-row: 3;
+  }
+  .prostory-gallery[data-gallery="interier"] > .gallery__item:nth-child(7) {
+    grid-column: 4;
+    grid-row: 3;
+  }
+  .prostory-gallery[data-gallery="interier"] > .gallery__item:nth-child(8) {
+    grid-column: 1 / -1;
+    grid-row: 4 / 5;
+  }
+  .prostory-gallery[data-gallery="interier"] .gallery__item--banner {
+    min-height: 0;
+    aspect-ratio: unset;
+  }
+}
+
+@media (max-width: 1279px) {
+  .prostory-gallery[data-gallery="interier"] > .gallery__item:nth-child(n) {
+    grid-column: unset;
+    grid-row: unset;
+  }
+  .prostory-gallery[data-gallery="interier"] {
+    grid-template-rows: none;
+  }
+}
+
+.prostory-gallery .gallery__item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 36px rgba(44, 36, 32, 0.18);
+}
+.prostory-gallery .gallery__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.prostory-gallery .gallery__item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(44, 36, 32, 0.18), rgba(44, 36, 32, 0));
+  opacity: 0;
+  transition: opacity var(--duration) var(--ease);
+  pointer-events: none;
+}
+.prostory-gallery .gallery__item:hover::after {
+  opacity: 1;
+}
+
+.prostory-gallery .gallery__item:nth-child(2) { animation-delay: 0.06s; }
+.prostory-gallery .gallery__item:nth-child(3) { animation-delay: 0.12s; }
+.prostory-gallery .gallery__item:nth-child(4) { animation-delay: 0.18s; }
+.prostory-gallery .gallery__item:nth-child(5) { animation-delay: 0.24s; }
+.prostory-gallery .gallery__item:nth-child(6) { animation-delay: 0.3s; }
+.prostory-gallery .gallery__item:nth-child(7) { animation-delay: 0.36s; }
+.prostory-gallery .gallery__item:nth-child(8) { animation-delay: 0.42s; }
+
+@keyframes prostory-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* --------------------------------------------------------------------------
    Page header (inner pages)
    -------------------------------------------------------------------------- */
@@ -1315,6 +1506,32 @@ p { margin: 0 0 var(--space-md); }
   font-size: 0.85rem;
   opacity: 0.8;
   text-align: center;
+}
+.footer__credit {
+  margin: 0;
+  padding-top: var(--space-md);
+  padding-bottom: var(--space-xs);
+  text-align: center;
+  font-size: 0.8rem;
+  opacity: 0.72;
+  color: rgba(255, 255, 255, 0.75);
+}
+.site-footer .footer__credit-name {
+  color: var(--color-secondary-light);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition:
+    color var(--duration) var(--ease),
+    border-color var(--duration) var(--ease),
+    transform var(--duration) var(--ease),
+    text-shadow var(--duration) var(--ease);
+}
+.site-footer .footer__credit-name:hover {
+  color: var(--color-light);
+  border-bottom-color: var(--color-secondary);
+  transform: translateY(-2px);
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.35);
 }
 
 /* --------------------------------------------------------------------------

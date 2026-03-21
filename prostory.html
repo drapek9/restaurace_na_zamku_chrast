@@ -41,41 +41,125 @@
   <main>
     <header class="page-hero">
       <div class="container">
-        <h1 class="page-hero__title">Prostory restaurace</h1>
-        <p class="page-hero__subtitle">Interiér, exteriér a atmosféra zámku Chrast — místo pro vaše setkání i oslavy.</p>
+        <h1 class="page-hero__title">Fotky</h1>
+        <p class="page-hero__subtitle">Prohlédněte si atmosféru restaurace, venkovní posezení, sklípek i detaily našeho podniku.</p>
       </div>
     </header>
 
-    <section class="section" style="display: none;">
-      <div class="container">
-        <div class="gallery gallery-prostory">
-          <div class="gallery__item">
-            <div class="placeholder-img" style="width:100%;height:100%;">Placeholder: Interiér – hlavní sál</div>
-          </div>
-          <div class="gallery__item">
-            <div class="placeholder-img" style="width:100%;height:100%;">Placeholder: Interiér – detail</div>
-          </div>
-          <div class="gallery__item">
-            <div class="placeholder-img" style="width:100%;height:100%;">Placeholder: Interiér – stolování</div>
-          </div>
-          <div class="gallery__item">
-            <div class="placeholder-img" style="width:100%;height:100%;">Placeholder: Exteriér – zahrádka</div>
-          </div>
-          <div class="gallery__item">
-            <div class="placeholder-img" style="width:100%;height:100%;">Placeholder: Exteriér – vstup</div>
-          </div>
-          <div class="gallery__item">
-            <div class="placeholder-img" style="width:100%;height:100%;">Placeholder: Zámek – budova</div>
-          </div>
-          <div class="gallery__item">
-            <div class="placeholder-img" style="width:100%;height:100%;">Placeholder: Zámek – nádvoří</div>
-          </div>
-          <div class="gallery__item">
-            <div class="placeholder-img" style="width:100%;height:100%;">Placeholder: Atmosféra – večer</div>
-          </div>
+    <section class="section prostory-section">
+      <div class="container" data-animate>
+        <h2 class="section-title">Interiér</h2>
+        <!-- Pořadí a třídy laděné k layoutu 4× řádek na širokém desktopu (viz CSS [data-gallery="interier"]) -->
+        <div class="prostory-gallery" data-gallery="interier">
+          <figure class="gallery__item gallery__item--large">
+            <img src="images/prvni_fotka.jpeg" alt="Interiér – atmosféra" class="gallery__image" loading="lazy">
+          </figure>
+          <figure class="gallery__item gallery__item--wide">
+            <img src="images/prvni_fotka.jpeg" alt="Interiér – hlavní sál" class="gallery__image" loading="lazy">
+          </figure>
+          <figure class="gallery__item">
+            <img src="images/prvni_fotka.jpeg" alt="Interiér – detail stolování" class="gallery__image" loading="lazy">
+          </figure>
+          <figure class="gallery__item">
+            <img src="images/prvni_fotka.jpeg" alt="Interiér – posezení" class="gallery__image" loading="lazy">
+          </figure>
+          <figure class="gallery__item gallery__item--wide">
+            <img src="images/prvni_fotka.jpeg" alt="Interiér – pohled přes sál" class="gallery__image" loading="lazy">
+          </figure>
+          <figure class="gallery__item">
+            <img src="images/prvni_fotka.jpeg" alt="Interiér – architektonický detail" class="gallery__image" loading="lazy">
+          </figure>
+          <figure class="gallery__item">
+            <img src="images/prvni_fotka.jpeg" alt="Interiér – bar" class="gallery__image" loading="lazy">
+          </figure>
+          <figure class="gallery__item gallery__item--banner">
+            <img src="images/prvni_fotka.jpeg" alt="Interiér – výzdoba a dekorace" class="gallery__image" loading="lazy">
+          </figure>
         </div>
       </div>
     </section>
+
+    <section class="section section--cream prostory-section">
+      <div class="container" data-animate>
+        <h2 class="section-title">Venkovní posezení</h2>
+        <div class="prostory-gallery" data-gallery="venkovni">
+          <figure class="gallery__item gallery__item--wide">
+            <img src="images/prvni_fotka.jpeg" alt="Venkovní posezení – celkový pohled" class="gallery__image" loading="lazy">
+          </figure>
+          <figure class="gallery__item gallery__item--tall">
+            <img src="images/prvni_fotka.jpeg" alt="Venkovní posezení – detail" class="gallery__image" loading="lazy">
+          </figure>
+          <figure class="gallery__item">
+            <img src="images/prvni_fotka.jpeg" alt="Venkovní posezení – večerní atmosféra" class="gallery__image" loading="lazy">
+          </figure>
+          <figure class="gallery__item">
+            <img src="images/prvni_fotka.jpeg" alt="Venkovní posezení – stoly" class="gallery__image" loading="lazy">
+          </figure>
+          <figure class="gallery__item">
+            <img src="images/prvni_fotka.jpeg" alt="Venkovní posezení – posezení" class="gallery__image" loading="lazy">
+          </figure>
+          <figure class="gallery__item">
+            <img src="images/prvni_fotka.jpeg" alt="Venkovní posezení – posezení" class="gallery__image" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section prostory-section">
+      <div class="container" data-animate>
+        <h2 class="section-title">Sklípek</h2>
+        <div class="prostory-gallery" data-gallery="sklipek">
+          <figure class="gallery__item gallery__item--tall">
+            <img src="images/prvni_fotka.jpeg" alt="Sklípek – interiér" class="gallery__image" loading="lazy">
+          </figure>
+          <figure class="gallery__item gallery__item--wide">
+            <img src="images/prvni_fotka.jpeg" alt="Sklípek – stůl pro degustaci" class="gallery__image" loading="lazy">
+          </figure>
+          <figure class="gallery__item gallery__item--tall">
+            <img src="images/prvni_fotka.jpeg" alt="Sklípek – detail dekorace" class="gallery__image" loading="lazy">
+          </figure>
+          <figure class="gallery__item">
+            <img src="images/prvni_fotka.jpeg" alt="Sklípek – osvětlení" class="gallery__image" loading="lazy">
+          </figure>
+          <figure class="gallery__item">
+            <img src="images/prvni_fotka.jpeg" alt="Sklípek – prostor" class="gallery__image" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--cream prostory-section">
+      <div class="container" data-animate>
+        <h2 class="section-title">Ostatní</h2>
+        <div class="prostory-gallery" data-gallery="ostatni">
+          <figure class="gallery__item gallery__item--wide">
+            <img src="images/prvni_fotka.jpeg" alt="Jídlo – signature pokrm" class="gallery__image" loading="lazy">
+          </figure>
+          <figure class="gallery__item">
+            <img src="images/prvni_fotka.jpeg" alt="Detail – servírování" class="gallery__image" loading="lazy">
+          </figure>
+          <figure class="gallery__item gallery__item--tall">
+            <img src="images/prvni_fotka.jpeg" alt="Detail – atmosféra večera" class="gallery__image" loading="lazy">
+          </figure>
+          <figure class="gallery__item ">
+            <img src="images/prvni_fotka.jpeg" alt="Ostatní – moment z restaurace" class="gallery__image" loading="lazy">
+          </figure>
+          <figure class="gallery__item gallery__item--wide">
+            <img src="images/prvni_fotka.jpeg" alt="Ostatní – detail" class="gallery__image" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <div class="menu-lightbox" id="menu-lightbox" aria-hidden="true">
+      <div class="menu-lightbox__overlay"></div>
+      <div class="menu-lightbox__content" role="dialog" aria-modal="true">
+        <button class="menu-lightbox__close" type="button" aria-label="Zavřít">&times;</button>
+        <button class="menu-lightbox__nav menu-lightbox__nav--prev" type="button" aria-label="Předchozí obrázek">&lsaquo;</button>
+        <button class="menu-lightbox__nav menu-lightbox__nav--next" type="button" aria-label="Další obrázek">&rsaquo;</button>
+        <img src="" alt="" class="menu-lightbox__image" />
+      </div>
+    </div>
 
     <footer class="site-footer">
       <div class="container">
@@ -107,6 +191,10 @@
         <div class="footer__bottom">
           © RESAL CATERING, s.r.o. · Restaurace Na Zámku Chrast · 2026
         </div>
+        <p class="footer__credit">
+          Web vytvořil
+          <a href="https://www.linkedin.com/in/%C5%A1imon-dr%C3%A1pal-34b840349/" class="footer__credit-name" target="_blank" rel="noopener noreferrer">Šimon Drápal</a>
+        </p>
       </div>
     </footer>
   </main>
