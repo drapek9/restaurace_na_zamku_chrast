@@ -11,12 +11,12 @@
 <body>
   <header class="site-header" id="site-header">
     <div class="header-inner">
-      <a href="index.html" class="logo">
+      <a href="index.php" class="logo">
         <img src="images/logo.jpg" alt="Logo Restaurace Na Zámku Chrast">
         <span>Restaurace Na Zámku Chrast</span>
       </a>
       <nav class="nav-desktop" aria-label="Hlavní navigace">
-        <a href="index.html" class="active">Úvod</a>
+        <a href="index.php" class="active">Úvod</a>
         <a href="prostory.html">Prostory restaurace</a>
         <a href="ctyri-pepre.html">4 Pepře</a>
         <a href="menu.html" class="nav-menu">Menu</a>
@@ -31,7 +31,7 @@
   </header>
   <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
   <nav class="nav-mobile" id="nav-mobile" aria-label="Mobilní menu">
-    <a href="index.html" class="active">Úvod</a>
+    <a href="index.php" class="active">Úvod</a>
     <a href="prostory.html">Prostory restaurace</a>
     <a href="ctyri-pepre.html">4 Pepře</a>
     <a href="menu.html" class="nav-menu">Menu</a>
@@ -152,15 +152,45 @@
         <h2 class="section-title text-center">Akce a události</h2>
         <p class="section-subtitle text-center">Pravidelné i mimořádné akce v restauraci Na Zámku.</p>
         <div class="events-grid">
-          <article class="event-card">
-            <div class="event-card__poster event-card__poster--square">
-              <img src="images/degustace_tataraku.jpg" alt="Plakát degustace tataráků" class="event-card__image">
-            </div>
-            <div class="event-card__body">
-              <h3 class="event-card__title">Degustace tataráků</h3>
-              <p class="event-card__desc">Ukázková akce: večer zaměřený na různé podoby tataráku v zámecké atmosféře.</p>
-            </div>
-          </article>
+          <?php
+            // Akce a události: automaticky načte obrázky ze složky /images/akce
+            $akceDir = __DIR__ . '/images/akce';
+            $akceFiles = [];
+
+            if (is_dir($akceDir)) {
+              $akceFiles = glob($akceDir . '/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}', GLOB_BRACE) ?: [];
+              natsort($akceFiles);
+              $akceFiles = array_values($akceFiles);
+            }
+          ?>
+
+          <?php if (!empty($akceFiles)) : ?>
+            <?php foreach ($akceFiles as $filePath) :
+              $fileName = basename($filePath);
+              $src = 'images/akce/' . rawurlencode($fileName);
+              $alt = 'Akce – ' . pathinfo($fileName, PATHINFO_FILENAME);
+            ?>
+              <article class="event-card">
+                <div class="event-card__poster event-card__poster--square">
+                  <img src="<?php echo htmlspecialchars($src, ENT_QUOTES, 'UTF-8'); ?>" alt="<?php echo htmlspecialchars($alt, ENT_QUOTES, 'UTF-8'); ?>" class="event-card__image" loading="lazy">
+                </div>
+                <div class="event-card__body">
+                  <h3 class="event-card__title"></h3>
+                  <p class="event-card__desc"></p>
+                </div>
+              </article>
+            <?php endforeach; ?>
+          <?php else : ?>
+            <article class="event-card">
+              <div class="event-card__poster event-card__poster--square">
+                <img src="images/degustace_tataraku.jpg" alt="Plakát degustace tataráků" class="event-card__image">
+              </div>
+              <div class="event-card__body">
+                <h3 class="event-card__title">Degustace tataráků</h3>
+                <p class="event-card__desc">Ukázková akce: večer zaměřený na různé podoby tataráku v zámecké atmosféře.</p>
+              </div>
+            </article>
+          <?php endif; ?>
         </div>
       </div>
     </section>
@@ -259,35 +289,39 @@
         <p class="section-subtitle text-center">Atmosféra zámku, restaurace a okolí.</p>
         <div class="gallery" id="home-gallery">
           <div class="gallery__item gallery__item--wide">
-            <img src="images/fotka_1.jpg" alt="Foto 1 – atmosféra restaurace" class="gallery__image">
+            <img src="images/fotky/galerie_treti.jpg" alt="Foto 1 – atmosféra restaurace" class="gallery__image">
           </div>
           <div class="gallery__item">
-            <img src="images/fotka_2.jpg" alt="Foto 2 – atmosféra restaurace" class="gallery__image">
+            <img src="images/fotky/galerie_prvni.jpg" alt="Foto 2 – atmosféra restaurace" class="gallery__image">
           </div>
           <div class="gallery__item gallery__item--tall">
-            <img src="images/fotka_3.jpg" alt="Foto 3 – atmosféra restaurace" class="gallery__image">
+            <!-- <img src="images/fotky/galerie_sesta.jpg" alt="Foto 3 – atmosféra restaurace" class="gallery__image"> -->
+            <img src="images/fotky/galerie_devata.jpg" alt="Foto 3 – atmosféra restaurace" class="gallery__image">
           </div>
           <div class="gallery__item">
-            <img src="images/fotka_4.jpg" alt="Foto 4 – atmosféra restaurace" class="gallery__image">
+            <img src="images/fotky/galerie_druha.jpg" alt="Foto 4 – atmosféra restaurace" class="gallery__image">
           </div>
           <div class="gallery__item">
-            <img src="images/fotka_1.jpg" alt="Foto 5 – atmosféra restaurace" class="gallery__image">
-          </div>
-          <div class="gallery__item gallery__item--wide gallery__item--large">
-            <img src="images/fotka_2.jpg" alt="Foto 6 – atmosféra restaurace" class="gallery__image">
-          </div>
-          <div class="gallery__item">
-            <img src="images/fotka_3.jpg" alt="Foto 7 – atmosféra restaurace" class="gallery__image">
-          </div>
-          <div class="gallery__item">
-            <img src="images/fotka_4.jpg" alt="Foto 8 – atmosféra restaurace" class="gallery__image">
-          </div>
-          <div class="gallery__item">
-            <img src="images/fotka_1.jpg" alt="Foto 9 – atmosféra restaurace" class="gallery__image">
+            <img src="images/fotky/galerie_ctvrta.jpg" alt="Foto 5 – atmosféra restaurace" class="gallery__image">
           </div>
           <div class="gallery__item gallery__item--wide">
-            <img src="images/fotka_2.jpg" alt="Foto 10 – atmosféra restaurace" class="gallery__image">
+            <img src="images/fotky/galerie_sedma.jpg" alt="Foto 10 – atmosféra restaurace" class="gallery__image">
           </div>
+          <!-- <div class="gallery__item gallery__item--wide gallery__item--large">
+            <img src="images/fotka_2.jpg" alt="Foto 6 – atmosféra restaurace" class="gallery__image">
+          </div> -->
+          <div class="gallery__item">
+            <img src="images/fotky/interier_prvni.jpeg" alt="Foto 7 – atmosféra restaurace" class="gallery__image">
+          </div>
+          <div class="gallery__item">
+            <img src="images/fotky/vinarna_vina.jpeg" alt="Foto 8 – atmosféra restaurace" class="gallery__image">
+          </div>
+          <div class="gallery__item">
+            <img src="images/fotky/galerie_osma.jpg" alt="Foto 9 – atmosféra restaurace" class="gallery__image">
+          </div>
+          <!-- <div class="gallery__item gallery__item--wide">
+            <img src="images/fotky/galerie_sedma.jpg" alt="Foto 10 – atmosféra restaurace" class="gallery__image">
+          </div> -->
         </div>
       </div>
     </section>
@@ -304,7 +338,7 @@
           </div>
           <div>
             <div class="footer__links">
-              <a href="index.html">Úvod</a>
+              <a href="index.php">Úvod</a>
               <a href="prostory.html">Prostory restaurace</a>
               <a href="ctyri-pepre.html">4 Pepře</a>
               <a href="menu.html">Menu</a>

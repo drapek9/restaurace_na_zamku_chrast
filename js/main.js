@@ -286,17 +286,21 @@
 
   var prostoryGalleries = document.querySelectorAll('.prostory-gallery');
   if (prostoryGalleries.length && lightbox) {
-    var prostoryItems = [];
     prostoryGalleries.forEach(function (gallery) {
+      var galleryItems = [];
       gallery.querySelectorAll('.gallery__item').forEach(function (item) {
         var img = item.querySelector('img');
         if (!img) return;
-        prostoryItems.push({ src: img.src || '', alt: img.alt || '' });
+        galleryItems.push({ src: img.src || '', alt: img.alt || '' });
+      });
+      var imageIndex = 0;
+      gallery.querySelectorAll('.gallery__item').forEach(function (item) {
+        var img = item.querySelector('img');
+        if (!img) return;
+        var index = imageIndex++;
         item.style.cursor = 'pointer';
         item.addEventListener('click', function () {
-          var index = prostoryItems.findIndex(function (entry) { return entry.src === (img.src || ''); });
-          if (index < 0) index = 0;
-          openMenuLightbox(img.src, img.alt, { galleryItems: prostoryItems, index: index });
+          openMenuLightbox(img.src, img.alt, { galleryItems: galleryItems, index: index });
         });
       });
     });

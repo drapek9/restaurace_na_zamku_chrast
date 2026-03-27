@@ -4,7 +4,7 @@ Moderní web restaurace Na Zámku Chrast (RESAL CATERING, s.r.o.) — elegantní
 
 ## Struktura projektu
 
-- **index.html** — Úvodní stránka (hero, o restauraci, ocenění, hodnocení, akce, galerie)
+- **index.php** — Úvodní stránka (hero, o restauraci, ocenění, hodnocení, akce, galerie)
 - **prostory.html** — Prostory restaurace (galerie interiér / exteriér / zámek)
 - **ctyri-pepre.html** — Koncept 4 Pepře
 - **kontakt.html** — Kontakt (adresa, telefon, e-mail, mapa, formulář)
@@ -14,7 +14,7 @@ Moderní web restaurace Na Zámku Chrast (RESAL CATERING, s.r.o.) — elegantní
 
 ## Jak spustit
 
-1. Otevřete **index.html** v prohlížeči (dvojklik nebo přes Live Server / lokální server).
+1. Otevřete **index.php** v prohlížeči (dvojklik nebo přes Live Server / lokální server).
 2. Pro vývoj s automatickým obnovením můžete použít např. rozšíření „Live Server” ve VS Code nebo příkaz:
    ```bash
    npx serve .

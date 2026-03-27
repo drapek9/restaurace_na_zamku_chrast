@@ -11,12 +11,12 @@
 <body>
   <header class="site-header" id="site-header">
     <div class="header-inner">
-      <a href="index.html" class="logo">
+      <a href="index.php" class="logo">
         <img src="images/logo.jpg" alt="Logo Restaurace Na Zámku Chrast">
         <span>Restaurace Na Zámku Chrast</span>
       </a>
       <nav class="nav-desktop" aria-label="Hlavní navigace">
-        <a href="index.html">Úvod</a>
+        <a href="index.php">Úvod</a>
         <a href="prostory.html" class="active">Prostory restaurace</a>
         <a href="ctyri-pepre.html">4 Pepře</a>
         <a href="menu.html" class="nav-menu">Menu</a>
@@ -31,7 +31,7 @@
   </header>
   <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
   <nav class="nav-mobile" id="nav-mobile" aria-label="Mobilní menu">
-    <a href="index.html">Úvod</a>
+    <a href="index.php">Úvod</a>
     <a href="prostory.html" class="active">Prostory restaurace</a>
     <a href="ctyri-pepre.html">4 Pepře</a>
     <a href="menu.html" class="nav-menu">Menu</a>
@@ -41,7 +41,7 @@
   <main>
     <header class="page-hero">
       <div class="container">
-        <h1 class="page-hero__title">Fotky</h1>
+        <h1 class="page-hero__title">Prostory restaurace</h1>
         <p class="page-hero__subtitle">Prohlédněte si atmosféru restaurace, venkovní posezení, sklípek i detaily našeho podniku.</p>
       </div>
     </header>
@@ -49,37 +49,33 @@
     <section class="section prostory-section">
       <div class="container" data-animate>
         <h2 class="section-title">Interiér</h2>
-        <!-- Pořadí a třídy laděné k layoutu 4× řádek na širokém desktopu (viz CSS [data-gallery="interier"]) -->
         <div class="prostory-gallery" data-gallery="interier">
           <figure class="gallery__item gallery__item--large">
-            <img src="images/prvni_fotka.jpeg" alt="Interiér – atmosféra" class="gallery__image" loading="lazy">
+            <img src="images/fotky/interier_prvni.jpeg" alt="Interiér – atmosféra" class="gallery__image" loading="lazy">
+          </figure>
+          <figure class="gallery__item">
+            <img src="images/fotky/interier_bar.jpeg" alt="Interiér – detail stolování" class="gallery__image" loading="lazy">
+          </figure>
+          <figure class="gallery__item">
+            <img src="images/fotky/interier_skrin.jpeg" alt="Interiér – posezení" class="gallery__image" loading="lazy">
           </figure>
           <figure class="gallery__item gallery__item--wide">
-            <img src="images/prvni_fotka.jpeg" alt="Interiér – hlavní sál" class="gallery__image" loading="lazy">
-          </figure>
-          <figure class="gallery__item">
-            <img src="images/prvni_fotka.jpeg" alt="Interiér – detail stolování" class="gallery__image" loading="lazy">
-          </figure>
-          <figure class="gallery__item">
-            <img src="images/prvni_fotka.jpeg" alt="Interiér – posezení" class="gallery__image" loading="lazy">
+            <img src="images/fotky/interier_pata.jpeg" alt="Interiér – pohled přes sál" class="gallery__image" loading="lazy">
           </figure>
           <figure class="gallery__item gallery__item--wide">
-            <img src="images/prvni_fotka.jpeg" alt="Interiér – pohled přes sál" class="gallery__image" loading="lazy">
+            <img src="images/fotky/interier_ctvrta.jpeg" alt="Interiér – pohled přes sál" class="gallery__image" loading="lazy">
           </figure>
           <figure class="gallery__item">
-            <img src="images/prvni_fotka.jpeg" alt="Interiér – architektonický detail" class="gallery__image" loading="lazy">
+            <img src="images/fotky/interier_druha.jpeg" alt="Interiér – architektonický detail" class="gallery__image" loading="lazy">
           </figure>
           <figure class="gallery__item">
-            <img src="images/prvni_fotka.jpeg" alt="Interiér – bar" class="gallery__image" loading="lazy">
-          </figure>
-          <figure class="gallery__item gallery__item--banner">
-            <img src="images/prvni_fotka.jpeg" alt="Interiér – výzdoba a dekorace" class="gallery__image" loading="lazy">
+            <img src="images/fotky/interier_treti.jpeg" alt="Interiér – bar" class="gallery__image" loading="lazy">
           </figure>
         </div>
       </div>
     </section>
 
-    <section class="section section--cream prostory-section">
+    <!-- <section class="section section--cream prostory-section">
       <div class="container" data-animate>
         <h2 class="section-title">Venkovní posezení</h2>
         <div class="prostory-gallery" data-gallery="venkovni">
@@ -103,49 +99,28 @@
           </figure>
         </div>
       </div>
-    </section>
-
-    <section class="section prostory-section">
-      <div class="container" data-animate>
-        <h2 class="section-title">Sklípek</h2>
-        <div class="prostory-gallery" data-gallery="sklipek">
-          <figure class="gallery__item gallery__item--tall">
-            <img src="images/prvni_fotka.jpeg" alt="Sklípek – interiér" class="gallery__image" loading="lazy">
-          </figure>
-          <figure class="gallery__item gallery__item--wide">
-            <img src="images/prvni_fotka.jpeg" alt="Sklípek – stůl pro degustaci" class="gallery__image" loading="lazy">
-          </figure>
-          <figure class="gallery__item gallery__item--tall">
-            <img src="images/prvni_fotka.jpeg" alt="Sklípek – detail dekorace" class="gallery__image" loading="lazy">
-          </figure>
-          <figure class="gallery__item">
-            <img src="images/prvni_fotka.jpeg" alt="Sklípek – osvětlení" class="gallery__image" loading="lazy">
-          </figure>
-          <figure class="gallery__item">
-            <img src="images/prvni_fotka.jpeg" alt="Sklípek – prostor" class="gallery__image" loading="lazy">
-          </figure>
-        </div>
-      </div>
-    </section>
+    </section> -->
 
     <section class="section section--cream prostory-section">
       <div class="container" data-animate>
-        <h2 class="section-title">Ostatní</h2>
-        <div class="prostory-gallery" data-gallery="ostatni">
-          <figure class="gallery__item gallery__item--wide">
-            <img src="images/prvni_fotka.jpeg" alt="Jídlo – signature pokrm" class="gallery__image" loading="lazy">
+        <h2 class="section-title">Vinárna a Horní salónek</h2>
+        <div class="prostory-gallery" data-gallery="vinárna">
+          <figure class="gallery__item gallery__item--tall gallery__item--video">
+            <div class="gallery__embed">
+              <iframe src="https://www.facebook.com/plugins/video.php?height=476&amp;href=https%3A%2F%2Fwww.facebook.com%2FRestauraceNaZamkuChrast%2Fvideos%2F3815254482060158%2F&amp;show_text=false&amp;width=267&amp;t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" title="Video z Facebooku – Vinárna a Horní salónek"></iframe>
+            </div>
           </figure>
-          <figure class="gallery__item">
-            <img src="images/prvni_fotka.jpeg" alt="Detail – servírování" class="gallery__image" loading="lazy">
+          <!-- <figure class="gallery__item gallery__item--wide">
+            <img src="images/fotky/dockal_vino.jpg" alt="Vinárna – stůl pro degustaci" class="gallery__image" loading="lazy">
+          </figure> -->
+          <figure class="gallery__item gallery__item--tall">
+            <img src="images/fotky/horni_salonek.jpeg" alt="Vinárna – detail dekorace" class="gallery__image" loading="lazy">
           </figure>
           <figure class="gallery__item gallery__item--tall">
-            <img src="images/prvni_fotka.jpeg" alt="Detail – atmosféra večera" class="gallery__image" loading="lazy">
+            <img src="images/fotky/vinarna_vina.jpeg" alt="Vinárna – osvětlení" class="gallery__image" loading="lazy">
           </figure>
-          <figure class="gallery__item ">
-            <img src="images/prvni_fotka.jpeg" alt="Ostatní – moment z restaurace" class="gallery__image" loading="lazy">
-          </figure>
-          <figure class="gallery__item gallery__item--wide">
-            <img src="images/prvni_fotka.jpeg" alt="Ostatní – detail" class="gallery__image" loading="lazy">
+          <figure class="gallery__item gallery__item--tall">
+            <img src="images/fotky/vinarna_prostredi.jpeg" alt="Vinárna – prostor" class="gallery__image" loading="lazy">
           </figure>
         </div>
       </div>
@@ -172,7 +147,7 @@
           </div>
           <div>
             <div class="footer__links">
-              <a href="index.html">Úvod</a>
+              <a href="index.php">Úvod</a>
               <a href="prostory.html">Prostory restaurace</a>
               <a href="ctyri-pepre.html">4 Pepře</a>
               <a href="menu.html">Menu</a>

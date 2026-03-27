@@ -51,7 +51,7 @@ Logo left, menu right (desktop); hamburger menu on mobile.
 
 | Page               | File          | Purpose |
 |--------------------|---------------|---------|
-| Úvodní stránka     | index.html    | Hero, about, awards, ratings, events, gallery |
+| Úvodní stránka     | index.php    | Hero, about, awards, ratings, events, gallery |
 | Prostory restaurace| prostory.html | Interior/exterior/castle gallery |
 | 4 Pepře            | ctyri-pepre.html | Concept page (inspired by current 4 Pepře) |
 | Kontakt            | kontakt.html  | Address, phone, email, map, contact form |
@@ -60,7 +60,7 @@ Logo left, menu right (desktop); hamburger menu on mobile.
 
 ## 3. Page-by-Page Structure
 
-### 3.1 Home Page (index.html)
+### 3.1 Home Page (index.php)
 
 1. **Hero**
    - Full-viewport background video (placeholder: `<video>` with poster)
@@ -156,7 +156,7 @@ Logo left, menu right (desktop); hamburger menu on mobile.
 
 ```
 restaurace_na_zamku_chrast/
-├── index.html          # Home
+├── index.php          # Home
 ├── prostory.html       # Prostory restaurace
 ├── ctyri-pepre.html    # 4 Pepře
 ├── kontakt.html        # Kontakt

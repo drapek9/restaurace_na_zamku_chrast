@@ -1,0 +1,7 @@
+# Úvodní stránka přes PHP; staré URL index.html → index.php
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^index\.html$ index.php [L,R=301,QSA]
+</IfModule>
