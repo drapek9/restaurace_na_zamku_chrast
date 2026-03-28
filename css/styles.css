@@ -361,7 +361,7 @@ p { margin: 0 0 var(--space-md); }
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: var(--color-dark) url("../images/prvni_fotka.jpeg") center/cover no-repeat;
+  background: var(--color-dark) url("../images/prvni_fotka.webp") center/cover no-repeat;
 }
 /* When video is playing, poster is hidden */
 .hero__video-wrap.video-playing .hero__poster {
