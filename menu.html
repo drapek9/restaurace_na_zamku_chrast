@@ -4,9 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Menu – týdenní a víkendové menu restaurace Na Zámku Chrast.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://zameckachrast.cz/menu.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="icon" type="image/jpeg" href="images/logo.jpg">
-  <title>Menu | Restaurace Na Zámku Chrast</title>
+  <title>Menu a jídelní lístek | Restaurace Na Zámku Chrast</title>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zameckachrast.cz/menu.html">
+  <meta property="og:title" content="Menu a jídelní lístek | Restaurace Na Zámku Chrast">
+  <meta property="og:description" content="Menu – týdenní a víkendové menu restaurace Na Zámku Chrast.">
+  <meta property="og:image" content="https://zameckachrast.cz/images/menu/poledni_menu.jpg">
+  <meta property="og:locale" content="cs_CZ">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Menu a jídelní lístek | Restaurace Na Zámku Chrast">
+  <meta name="twitter:description" content="Menu – týdenní a víkendové menu restaurace Na Zámku Chrast.">
+  <meta name="twitter:image" content="https://zameckachrast.cz/images/menu/poledni_menu.jpg">
   <link rel="stylesheet" href="css/styles.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://zameckachrast.cz/menu.html#webpage","url":"https://zameckachrast.cz/menu.html","name":"Menu a jídelní lístek | Restaurace Na Zámku Chrast","description":"Menu – týdenní a víkendové menu restaurace Na Zámku Chrast.","isPartOf":{"@type":"WebSite","@id":"https://zameckachrast.cz/#website","url":"https://zameckachrast.cz/","name":"Restaurace Na Zámku Chrast"},"about":{"@id":"https://zameckachrast.cz/#restaurant"}}]}
+  </script>
 </head>
 <body>
   <header class="site-header" id="site-header">
@@ -19,7 +36,7 @@
         <a href="index.html">Úvod</a>
         <a href="prostory.html">Prostory restaurace</a>
         <a href="ctyri-pepre.html">4 Pepře</a>
-        <a href="menu.html" class="nav-menu active">Menu</a>
+        <a href="menu.html" class="nav-menu active" aria-current="page">Menu</a>
         <a href="kontakt.html">Kontakt</a>
       </nav>
       <button class="nav-toggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="nav-mobile" id="nav-toggle">
@@ -34,7 +51,7 @@
     <a href="index.html">Úvod</a>
     <a href="prostory.html">Prostory restaurace</a>
     <a href="ctyri-pepre.html">4 Pepře</a>
-    <a href="menu.html" class="nav-menu active">Menu</a>
+    <a href="menu.html" class="nav-menu active" aria-current="page">Menu</a>
     <a href="kontakt.html">Kontakt</a>
   </nav>
 
@@ -52,19 +69,19 @@
           <figure class="menu-card" data-menu-card="weekly">
             <figcaption class="menu-card__label">Polední menu</figcaption>
             <div class="menu-card__image-wrap">
-              <img src="images/menu/poledni_menu.jpg" alt="Týdenní menu restaurace" class="menu-card__image">
+              <img src="images/menu/poledni_menu.jpg" alt="Týdenní menu restaurace" class="menu-card__image" loading="lazy">
             </div>
           </figure>
           <figure class="menu-card" data-menu-card="weekend">
             <figcaption class="menu-card__label">Víkendové menu</figcaption>
             <div class="menu-card__image-wrap">
-              <img src="images/menu/vikendove_menu.jpg" alt="Víkendové menu restaurace" class="menu-card__image">
+              <img src="images/menu/vikendove_menu.jpg" alt="Víkendové menu restaurace" class="menu-card__image" loading="lazy">
             </div>
           </figure>
           <figure class="menu-card" data-menu-card="alacarte">
             <figcaption class="menu-card__label">Jídelní lístek</figcaption>
             <div class="menu-card__image-wrap">
-              <img src="images/menu/jidelni_listek.jpeg" alt="Jídelní lístek restaurace" class="menu-card__image">
+              <img src="images/menu/jidelni_listek.jpeg" alt="Jídelní lístek restaurace" class="menu-card__image" loading="lazy">
             </div>
           </figure>
         </div>
@@ -119,7 +136,7 @@
     </footer>
   </main>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
 
