@@ -5,13 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Restaurace Na Zámku Chrast – poctivá kuchyně v historickém prostředí zámku. RESAL CATERING, s.r.o.">
   <meta name="robots" content="index, follow">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X769CSEFRD"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-X769CSEFRD');
-    gtag('event', 'key_page_uvod', { page_label: 'Úvod' });
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 500
+    });
   </script>
   <link rel="canonical" href="https://zameckachrast.cz/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,11 +33,12 @@
   <meta name="twitter:description" content="Restaurace Na Zámku Chrast – poctivá kuchyně v historickém prostředí zámku. RESAL CATERING, s.r.o.">
   <meta name="twitter:image" content="https://zameckachrast.cz/images/fotky/interier_prvni.webp">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/consent-banner.css">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[{"@type":"Restaurant","@id":"https://zameckachrast.cz/#restaurant","name":"Restaurace Na Zámku Chrast","url":"https://zameckachrast.cz/","image":["https://zameckachrast.cz/images/fotky/interier_prvni.webp","https://zameckachrast.cz/images/logo.jpg"],"telephone":"+420773549795","email":"info@zameckachrast.cz","address":{"@type":"PostalAddress","streetAddress":"Náměstí 1","addressLocality":"Chrast","postalCode":"53851","addressCountry":"CZ"},"servesCuisine":"Česká kuchyně","priceRange":"$$","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday"],"opens":"11:00","closes":"21:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"11:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"11:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"11:00","closes":"19:00"}],"sameAs":["https://www.facebook.com/RestauraceNaZamkuChrast","https://www.instagram.com/restaurace_na_zamku_chrast/"],"parentOrganization":{"@type":"Organization","name":"RESAL CATERING, s.r.o."}},{"@type":"WebSite","@id":"https://zameckachrast.cz/#website","url":"https://zameckachrast.cz/","name":"Restaurace Na Zámku Chrast","publisher":{"@id":"https://zameckachrast.cz/#restaurant"}}]}
   </script>
 </head>
-<body>
+<body data-consent-ga-page="uvod">
   <header class="site-header" id="site-header">
     <div class="header-inner">
       <a href="index.php" class="logo">
@@ -361,6 +365,7 @@
               <a href="ctyri-pepre.html">4 Pepře</a>
               <a href="menu.html">Menu</a>
               <a href="kontakt.html">Kontakt</a>
+              <a href="ochrana-udaju.html">Ochrana údajů a cookies</a>
             </div>
             <div class="footer__social">
               <a href="https://www.facebook.com/RestauraceNaZamkuChrast" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
@@ -383,6 +388,7 @@
     </footer>
   </main>
 
+  <script src="js/cookie-consent.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>
 </html>

@@ -77,6 +77,34 @@ p { margin: 0 0 var(--space-md); }
 }
 .container--narrow { max-width: var(--container-narrow); }
 
+/* Zásady ochrany údajů – klidná, čitelná stránka */
+.legal-page .section-title {
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-sm);
+  font-size: clamp(1.2rem, 2.5vw, 1.45rem);
+}
+.legal-page .section-title:first-of-type {
+  margin-top: 0;
+}
+.legal-page p {
+  margin: 0 0 var(--space-md);
+  color: var(--color-dark-soft);
+  line-height: 1.65;
+  max-width: 65ch;
+}
+.legal-page p code {
+  font-size: 0.9em;
+  background: rgba(44, 36, 32, 0.06);
+  padding: 0.12em 0.35em;
+  border-radius: 4px;
+}
+.legal-page__meta {
+  margin-top: var(--space-xl);
+  font-size: 0.9rem;
+  color: var(--color-dark-soft);
+  opacity: 0.9;
+}
+
 .section {
   padding: var(--space-3xl) 0;
 }

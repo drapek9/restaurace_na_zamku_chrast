@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ukázka: cookie consent + GA4 (Consent Mode v2) – jeden soubor</title>
+  <!--
+    Tento soubor je kompletní ukázka (HTML + CSS + JS v jednom).
+    Na produkčním webu používejte: css/consent-banner.css + js/cookie-consent.js
+  -->
+  <style>
+    :root { --space-md: 1rem; --space-sm: 0.75rem; --radius: 6px; }
+    body { font-family: system-ui, sans-serif; margin: 0; padding: 2rem; min-height: 60vh; }
+    .cookie-consent {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 100000;
+      padding: var(--space-md); padding-bottom: calc(var(--space-md) + env(safe-area-inset-bottom, 0));
+      background: rgba(44, 36, 32, 0.96); color: #f5f0eb;
+      box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.18);
+      font-size: 0.95rem; line-height: 1.45;
+    }
+    .cookie-consent__inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-md);
+    }
+    .cookie-consent__text { flex: 1 1 260px; margin: 0; }
+    .cookie-consent__actions { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
+    .cookie-consent__btn {
+      cursor: pointer; border: none; border-radius: var(--radius); padding: 0.55rem 1.15rem;
+      font-size: 0.9rem; font-family: inherit; font-weight: 600;
+    }
+    .cookie-consent__btn--accept { background: #c9a227; color: #2c2420; }
+    .cookie-consent__btn--accept:hover { background: #d4ae32; }
+    .cookie-consent__btn--reject {
+      background: transparent; color: #f5f0eb; border: 1px solid rgba(245, 240, 235, 0.45);
+    }
+    .cookie-consent__btn--reject:hover { background: rgba(255, 255, 255, 0.08); }
+    body.cookie-consent-visible { padding-bottom: 5.5rem; }
+  </style>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+  </script>
+</head>
+<body data-consent-ga-page="uvod">
+  <h1>Ukázka souhlasu s cookies</h1>
+  <p>GA4 (G-X769CSEFRD) se načte až po kliknutí na „Souhlasím“. Žádný požadavek na googletagmanager.com před souhlasem.</p>
+  <p>Pro test znovu zobrazení banneru: <code>localStorage.removeItem('zameckachrast_cookie_consent')</code> v konzoli a obnovit stránku.</p>
+
+  <script>
+(function () {
+  'use strict';
+  var STORAGE_KEY = 'zameckachrast_cookie_consent';
+  var SCHEMA_VERSION = 1;
+  var GA_MEASUREMENT_ID = 'G-X769CSEFRD';
+  var PAGE_EVENTS = {
+    uvod: { event: 'key_page_uvod', page_label: 'Úvod' },
+    prostory: { event: 'key_page_prostory', page_label: 'Prostory restaurace' },
+    ctyri_pepre: { event: 'key_page_ctyri_pepre', page_label: '4 Pepře' },
+    menu: { event: 'key_page_menu', page_label: 'Menu' },
+    kontakt: { event: 'key_page_kontakt', page_label: 'Kontakt' }
+  };
+  function readConsent() {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return null;
+      var data = JSON.parse(raw);
+      if (!data || data.schemaVersion !== SCHEMA_VERSION || !data.choices) return null;
+      return data;
+    } catch (e) { return null; }
+  }
+  function saveConsent(choices) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        schemaVersion: SCHEMA_VERSION,
+        choices: choices,
+        updatedAt: new Date().toISOString()
+      }));
+    } catch (e) {}
+  }
+  function getBodyPageKey() {
+    var b = document.body;
+    return (b && b.getAttribute('data-consent-ga-page')) || '';
+  }
+  function removeBanner() {
+    var bar = document.getElementById('cookie-consent-bar');
+    if (bar) bar.remove();
+    document.body.classList.remove('cookie-consent-visible');
+  }
+  function showBanner() {
+    if (document.getElementById('cookie-consent-bar')) return;
+    var bar = document.createElement('div');
+    bar.id = 'cookie-consent-bar';
+    bar.className = 'cookie-consent';
+    bar.setAttribute('role', 'dialog');
+    bar.setAttribute('aria-live', 'polite');
+    bar.setAttribute('aria-label', 'Souhlas s cookies');
+    var inner = document.createElement('div');
+    inner.className = 'cookie-consent__inner';
+    var p = document.createElement('p');
+    p.className = 'cookie-consent__text';
+    p.textContent = 'Používáme cookies pro analýzu návštěvnosti.';
+    var actions = document.createElement('div');
+    actions.className = 'cookie-consent__actions';
+    var btnAccept = document.createElement('button');
+    btnAccept.type = 'button';
+    btnAccept.className = 'cookie-consent__btn cookie-consent__btn--accept';
+    btnAccept.textContent = 'Souhlasím';
+    var btnReject = document.createElement('button');
+    btnReject.type = 'button';
+    btnReject.className = 'cookie-consent__btn cookie-consent__btn--reject';
+    btnReject.textContent = 'Odmítnout';
+    btnAccept.addEventListener('click', onAccept);
+    btnReject.addEventListener('click', onDecline);
+    actions.appendChild(btnReject);
+    actions.appendChild(btnAccept);
+    inner.appendChild(p);
+    inner.appendChild(actions);
+    bar.appendChild(inner);
+    document.body.appendChild(bar);
+    document.body.classList.add('cookie-consent-visible');
+  }
+  function fireKeyPageEvent() {
+    var key = getBodyPageKey();
+    if (!key || typeof window.gtag !== 'function') return;
+    var def = PAGE_EVENTS[key];
+    if (!def) return;
+    window.gtag('event', def.event, { page_label: def.page_label });
+  }
+  function loadGA4AfterConsent() {
+    if (window.__zameckaGA4Ready) {
+      fireKeyPageEvent();
+      return;
+    }
+    if (document.querySelector('script[data-zamecka-ga4="1"]')) return;
+    var s = document.createElement('script');
+    s.async = true;
+    s.setAttribute('data-zamecka-ga4', '1');
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA_MEASUREMENT_ID);
+    s.onload = function () {
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { window.dataLayer.push(arguments); }
+      window.gtag = gtag;
+      gtag('consent', 'update', {
+        analytics_storage: 'granted',
+        ad_storage: 'granted',
+        ad_user_data: 'granted',
+        ad_personalization: 'granted'
+      });
+      gtag('js', new Date());
+      gtag('config', GA_MEASUREMENT_ID);
+      window.__zameckaGA4Ready = true;
+      fireKeyPageEvent();
+    };
+    document.head.appendChild(s);
+  }
+  function onAccept() {
+    saveConsent({ analytics: true, marketing: false });
+    removeBanner();
+    loadGA4AfterConsent();
+  }
+  function onDecline() {
+    saveConsent({ analytics: false, marketing: false });
+    removeBanner();
+  }
+  function init() {
+    var stored = readConsent();
+    if (stored && stored.choices.analytics === true) {
+      loadGA4AfterConsent();
+      return;
+    }
+    if (stored && stored.choices.analytics === false) return;
+    showBanner();
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+  </script>
+</body>
+</html>

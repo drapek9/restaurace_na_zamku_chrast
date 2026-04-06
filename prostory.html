@@ -5,13 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Prostory Restaurace Na Zámku Chrast – interiér, exteriér a prostředí zámku.">
   <meta name="robots" content="index, follow">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X769CSEFRD"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-X769CSEFRD');
-    gtag('event', 'key_page_prostory', { page_label: 'Prostory restaurace' });
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 500
+    });
   </script>
   <link rel="canonical" href="https://zameckachrast.cz/prostory.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,11 +32,12 @@
   <meta name="twitter:description" content="Prostory Restaurace Na Zámku Chrast – interiér, exteriér a prostředí zámku.">
   <meta name="twitter:image" content="https://zameckachrast.cz/images/fotky/interier_prvni.webp">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/consent-banner.css">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://zameckachrast.cz/prostory.html#webpage","url":"https://zameckachrast.cz/prostory.html","name":"Prostory restaurace a fotogalerie | Restaurace Na Zámku Chrast","description":"Prostory Restaurace Na Zámku Chrast – interiér, exteriér a prostředí zámku.","isPartOf":{"@type":"WebSite","@id":"https://zameckachrast.cz/#website","url":"https://zameckachrast.cz/","name":"Restaurace Na Zámku Chrast"},"about":{"@id":"https://zameckachrast.cz/#restaurant"}}]}
   </script>
 </head>
-<body>
+<body data-consent-ga-page="prostory">
   <header class="site-header" id="site-header">
     <div class="header-inner">
       <a href="index.php" class="logo">
@@ -177,6 +181,7 @@
               <a href="ctyri-pepre.html">4 Pepře</a>
               <a href="menu.html">Menu</a>
               <a href="kontakt.html">Kontakt</a>
+              <a href="ochrana-udaju.html">Ochrana údajů a cookies</a>
             </div>
             <div class="footer__social">
               <a href="https://www.facebook.com/RestauraceNaZamkuChrast" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
@@ -199,6 +204,7 @@
     </footer>
   </main>
 
+  <script src="js/cookie-consent.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>
 </html>

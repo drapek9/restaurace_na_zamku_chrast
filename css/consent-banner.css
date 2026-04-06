@@ -1,0 +1,98 @@
+/* Cookie lišta – GDPR / ePrivacy (Google Consent Mode v2) */
+
+.cookie-consent {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100000;
+  padding: var(--space-md, 1rem) var(--space-md, 1rem);
+  padding-bottom: calc(var(--space-md, 1rem) + env(safe-area-inset-bottom, 0px));
+  background: rgba(44, 36, 32, 0.96);
+  color: #f5f0eb;
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.18);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.cookie-consent__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md, 1rem);
+}
+
+.cookie-consent__text-wrap {
+  flex: 1 1 260px;
+}
+
+.cookie-consent__text {
+  margin: 0 0 0.35rem;
+}
+
+.cookie-consent__more {
+  font-size: 0.85rem;
+  color: rgba(245, 240, 235, 0.88);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cookie-consent__more:hover,
+.cookie-consent__more:focus {
+  color: #fff;
+}
+
+.cookie-consent__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm, 0.75rem);
+}
+
+.cookie-consent__btn {
+  cursor: pointer;
+  border: none;
+  border-radius: var(--radius, 6px);
+  padding: 0.55rem 1.15rem;
+  font-size: 0.9rem;
+  font-family: inherit;
+  font-weight: 600;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.cookie-consent__btn:focus {
+  outline: 2px solid #c9a227;
+  outline-offset: 2px;
+}
+
+.cookie-consent__btn--accept {
+  background: #c9a227;
+  color: #2c2420;
+}
+
+.cookie-consent__btn--accept:hover {
+  background: #d4ae32;
+}
+
+.cookie-consent__btn--reject {
+  background: transparent;
+  color: #f5f0eb;
+  border: 1px solid rgba(245, 240, 235, 0.45);
+}
+
+.cookie-consent__btn--reject:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Prostor nad fixní lištou – aby nepřekryla patičku */
+body.cookie-consent-visible {
+  padding-bottom: 5.5rem;
+}
+
+@media (min-width: 768px) {
+  body.cookie-consent-visible {
+    padding-bottom: 4.5rem;
+  }
+}
